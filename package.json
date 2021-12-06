@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "^16",
+    "node": "^14",
     "yarn": "please-use-npm"
   },
   "volta": {
-    "node": "16.13.1"
+    "node": "14.17.6"
   },
   "scripts": {
     "dev": "vite",
