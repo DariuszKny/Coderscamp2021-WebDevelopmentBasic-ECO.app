@@ -20,8 +20,8 @@ export function  showRankingMenu() {
 
 
 // const user= {
-//     name='',
-//     points: ,
+//     name= input.value?,
+//     score ,
 // }
 
 // window.localStorage.setItem('user', JSON.stringify(user));
