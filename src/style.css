@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -5,4 +19,21 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.footer {
+  /* background-color: black; */
+  min-height: 4vh;
+  margin-top: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.footer__text {
+  position: relative;
+  color: black;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }
