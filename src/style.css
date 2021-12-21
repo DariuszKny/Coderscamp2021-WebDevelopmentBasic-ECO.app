@@ -19,6 +19,15 @@ font-family: 'Arial Narrow';
   margin: 0px;
 }
 
+#mainMenuButton{
+    background: none;
+    border: none;
+    padding: 0;
+    font-size:25px;
+    cursor: pointer;
+    box-shadow:none;
+}
+
 html,
 body {
   background-color: rgb(243, 234, 234);
@@ -80,8 +89,7 @@ transform: translate(-5px,-5px);
   bottom: 0;
   width: 100%;
   justify-self:end;
-  margin-top:auto;
-  
+  margin-top:25px;
 }
 
 .pfooter {
@@ -116,20 +124,77 @@ transform: translate(-5px,-5px);
 
 .rankingcontainer{
   display:grid;
-  border: solid black 2px;
+  border: solid black 3px;
   font: black;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows:45px auto;
   margin: 40px;
+  margin-bottom:20px;
+  place-items: stretch stretch;
+  height: inherit;
 }
+
 .tabtitle{
  grid-column:span 2;
+ text-align: center;
+ align-self: center;
 }
+
 .quizbox{
-  border: solid black 1px;
+  border-top: solid black 2px;
 }
 
 .gamebox{
-  border: solid black 1px;
+  border-top: solid black 2px;
+  border-left: solid black 2px;
+}
+ol{
+  list-style: none;
+  counter-reset: licznik;
+  text-align: left;
+  grid-template-rows:repeat(20, 1fr);
+  border-top: solid black 2px;
+
+}
+ol li, ol li3 {
+  counter-increment: licznik;
+}
+ol li:before, ol li3:before {
+  content: counter(licznik) ". ";
+}
+
+li, li2, li3, li4{
+  border-bottom: dashed black 1px;
+}
+.qresult {
+  display:grid;
+  grid-template-columns:1fr 60px;
+  font-size:20px;
+}
+
+.gresult{
+  display:grid;
+  grid-template-columns:1fr 60px;
+  font-size:20px; 
+}
+#usernameg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#score{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top:solid black 2px;
+}
+
+#scoreg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top:solid black 2px;
 }
 
 @media only screen and (min-width: 570px) and (max-width: 870px) {
@@ -138,10 +203,21 @@ transform: translate(-5px,-5px);
     grid-template-rows: 250px 250px 250px;
     grid-gap:20px;
   }
-.footer{
-  position:fixed;
-  justify-self: end;
-  
 }
 
-}
+@media only screen and (max-width: 700px) {
+  .rankingcontainer{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .tabtitle{
+    grid-column:span 1;
+    text-align: center;
+    align-self: center;
+   }
+  footer{
+    position:fixed;
+  }
+  }
+    
+
