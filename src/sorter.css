@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app {
+      margin: 10px auto;
+      display: grid;
+      grid-template-columns: 70% 20%;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+  }
+
+  .game-over {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 400px;
+    background-image: linear-gradient(to bottom, #ff8a00, #e52e71);
+    height: 100%;
+    transition: all 0.7s ease-in;
+  }
+
+  .game-over.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    margin: 10px;
+  }
+
+  .btn {
+    display: block;
+    min-width: 150px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background: white;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 14px;
+  }
+
+  .btn:hover {
+    background-image: linear-gradient(to right,#f7f6d7, #6df0ae);
+    cursor: pointer;
+  }
+
+  .btn-start {
+    background-image:
+    linear-gradient(
+      to right,
+      #ff8a00, #e52e71
+    );
+  }
+
+  .btn-start.selected {
+    background-image: linear-gradient(to right,#f7f6d7, #6df0ae);
+  }
+
+  .btn-approve.disable {
+    background-color: gray;
+  }
+
+  .btn-approve.disable:hover {
+    background-image: gray;
+    cursor: default;
+  }
+
+  .trash { 
+      height: 80px; 
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+
+  .containers {
+      height: 250px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+  }
+
+  .score {
+    background-color: rgba(232, 240, 226, 0.5);
+    text-align: center;
+    padding: 20px;
+    border: 2px solid lightyellow;
+    border-radius: 20px;
+  }
+
+  .score.gameOver {
+    position: absolute;
+    width: 80%;
+  }
+
+  .game-over__score {
+    align-items: center;
+  }
+
+  .game-over__score_value {
+    font-size: 70px;
+    text-align: center;
+  }
+
+  .game-over__score_input {
+    border: 2px solid white;
+    border-radius: 20px;
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    display: block;
+  }
+
+  .game-over__score_input:focus {
+    outline: none;
+  }
+
+  .game-over__score_input.wrong {
+    border: greenyellow 2px solid;
+  }
+ 
+  .score_current {
+    font-size: 70px;
+  }
+
+  .lives_current {
+    font-size: 30px;
+  }
