@@ -2,6 +2,12 @@ export function  showSorterMenu() {
     document.querySelector('#app').innerHTML = `  
     <div class="container"></div>`;
 
+    const head = document.querySelector('head');
+    let link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('href', './sorter.css');
+    head.appendChild(link);
+
     const APP = document.querySelector('.container');
     const GRID_WIDTH = 5;
     const AIR_HEIGHT = 8;
@@ -100,12 +106,13 @@ export function  showSorterMenu() {
     let nextRandom = 0;
     let score = 0;
     let lives = 3;
-    let countForSpeed = 0;   //for speedUp() function
+    let countForSpeed = 0;   //dla speedUp() function
 
     //create all the cells for grid
-    const gameOverDisplay = gameOverMenu();
+    
     const grid = createGrid();
     const scoreDisplay = createScoreDisplay();
+    const gameOverDisplay = gameOverMenu();
   
     let cells = Array.from(document.querySelectorAll('.cell')); 
     const showScore = document.querySelector('.score_current');
@@ -164,17 +171,7 @@ export function  showSorterMenu() {
     function gameOverMenu() {
       let gameOverWrapper = document.createElement('div');
       gameOverWrapper.classList.add('game-over');
-      gameOverWrapper.innerHTML = '<h2>Oops... The game is over!</h2><br><h3>Do you want to continue?</h2>';
-      let restartBtn = document.createElement('button');
-      restartBtn.classList.add('btn-restart');
-      restartBtn.classList.add('btn');
-      restartBtn.innerHTML = 'Restart';
-      let returnBtn = document.createElement('button');
-      returnBtn.classList.add('btn-return');
-      returnBtn.classList.add('btn');
-      returnBtn.innerHTML = 'Go to main menu';
-      gameOverWrapper.appendChild(restartBtn);
-      gameOverWrapper.appendChild(returnBtn);
+      gameOverWrapper.innerHTML = '<h2>Oops... The game is over!</h2><h3>Your score is:</h3>';
       APP.appendChild(gameOverWrapper);
     }
 
@@ -245,6 +242,7 @@ export function  showSorterMenu() {
     // if 'containers' are on the next row
       if(cells[currentPosition].classList.contains('containers')) {
         addScore();
+
         // start a new item falling
         random = nextRandom;
         nextRandom = Math.floor(Math.random() * trash.length)
@@ -279,14 +277,74 @@ export function  showSorterMenu() {
       if(lives === 0) {
         clearInterval(timerId);
         timerId = null;
+        addTheLastScore();
         document.querySelector('.game-over').classList.add('active');
         document.removeEventListener('keydown', control);
       }
     }
 
-    let restart = document.querySelector('.btn-restart');
-    restart.addEventListener('click', () => {
-      document.location.reload();
-    });
+    function addTheLastScore() {
+      let lastScoreWrapper = document.createElement('div');
+      lastScoreWrapper.classList.add('game-over__score');
+
+      let scoreDiv = document.createElement('div');
+      scoreDiv.classList.add('game-over__score_value');
+      let currentScore = document.querySelector('.score_current');
+      localStorage.sorterScore = currentScore.innerHTML;
+      scoreDiv.textContent = currentScore.innerHTML;
+      lastScoreWrapper.appendChild(scoreDiv);
+
+      let nameInput = document.createElement('input');
+      nameInput.classList.add('game-over__score_input')
+      nameInput.setAttribute('id', 'nameg');
+      nameInput.setAttribute('name', 'nameg');
+      nameInput.setAttribute('type', 'text');
+      nameInput.setAttribute('maxlength', '15');
+      lastScoreWrapper.appendChild(nameInput);
+
+      let approveBtn = document.createElement('button');
+      approveBtn.classList.add('btn-approve');
+      approveBtn.classList.add('btn');
+      approveBtn.innerHTML = 'Add my score!';
+      lastScoreWrapper.appendChild(approveBtn);
+      approveBtn.addEventListener('click', addAppScore);
+
+      let restartBtn = document.createElement('button');
+      restartBtn.classList.add('btn-restart');
+      restartBtn.classList.add('btn');
+      restartBtn.innerHTML = 'Restart';
+      lastScoreWrapper.appendChild(restartBtn);
+      restartBtn.addEventListener('click', removeSorterScore);
+
+      let gameOverParent = document.querySelector('.game-over');
+      gameOverParent.appendChild(lastScoreWrapper);
+
+    }
+
+    function addAppScore() {
+      let inputName = document.querySelector('.game-over__score_input');
+      if(!inputName.value) {
+        inputName.classList.add('wrong');
+      } else {
+        inputName.classList.remove('wrong');
+        let approveBtn = document.querySelector('.btn-approve');
+        approveBtn.removeEventListener('click', addAppScore);
+        approveBtn.classList.add('disable');
+        let appScore = JSON.parse(localStorage.getItem('gameRanking')) || {};
+        appScore.nameg = document.querySelector('.game-over__score_input').value;
+        let currentScoreg = +appScore.scoreg || 0;
+        let sorterScore = +document.querySelector('.score_current').innerHTML;
+        console.log(currentScoreg + ' to currentScoreg');
+        console.log(sorterScore + ' to sorterScore');
+        appScore.scoreg = currentScoreg + sorterScore;
+        localStorage.setItem('gameRanking', JSON.stringify(appScore));
+        }
+      
+    }
+
+    function removeSorterScore() {
+      localStorage.removeItem('sorterScore');
+      document.location.reload();  
+    }
 
 }
