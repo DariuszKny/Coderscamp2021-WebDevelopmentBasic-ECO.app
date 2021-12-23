@@ -11,86 +11,86 @@ export function  showSorterMenu() {
     let containers = [
         {
           sort: 'bio',
-          color: 'url(./img/containers/bio.png)'
+          color: 'url(./img-sorter/containers/bio.png)'
         },
         {
           sort: 'paper',
-          color: 'url(./img/containers/paper.png)'
+          color: 'url(./img-sorter/containers/paper.png)'
         },
         {
           sort: 'plastic',
-          color: 'url(./img/containers/plastic.png)'
+          color: 'url(./img-sorter/containers/plastic.png)'
         },
         {
           sort: 'glass',
-          color: 'url(./img/containers/glass.png)'
+          color: 'url(./img-sorter/containers/glass.png)'
         },
         {
           sort: 'mix',
-          color: 'url(./img/containers/mix.png)'
+          color: 'url(./img-sorter/containers/mix.png)'
         },
     ];
 
     const trash = [
       {
         sort: 'plastic',
-        path: 'url(./img/trash/aluminium-foil.png)'
+        path: 'url(./img-sorter/trash/aluminium-foil.png)'
       },
       {
         sort: 'plastic',
-        path: 'url(./img/trash/plastic-bag.png)'
+        path: 'url(./img-sorter/trash/plastic-bag.png)'
       },
       {
         sort: 'plastic',
-        path: 'url(./img/trash/plastic-bottle.png)'
+        path: 'url(./img-sorter/trash/plastic-bottle.png)'
       },
       {
         sort: 'plastic',
-        path: 'url(./img/trash/puszka.png)'
+        path: 'url(./img-sorter/trash/puszka.png)'
       },
       {
         sort: 'glass',
-        path: 'url(./img/trash/glass_bottle.png)'
+        path: 'url(./img-sorter/trash/glass_bottle.png)'
       },
       {
         sort: 'glass',
-        path: 'url(./img/trash/glass-bottles.png)'
+        path: 'url(./img-sorter/trash/glass-bottles.png)'
       },
       {
         sort: 'paper',
-        path: 'url(./img/trash/box-paper.png)'
+        path: 'url(./img-sorter/trash/box-paper.png)'
       },
       {
         sort: 'paper',
-        path: 'url(./img/trash/newspaper.png)'
+        path: 'url(./img-sorter/trash/newspaper.png)'
       },
       {
         sort: 'bio',
-        path: 'url(./img/trash/apple.png)'
+        path: 'url(./img-sorter/trash/apple.png)'
       },
       {
         sort: 'bio',
-        path: 'url(./img/trash/banana.png)'
+        path: 'url(./img-sorter/trash/banana.png)'
       },
       {
         sort: 'bio',
-        path: 'url(./img/trash/leaves.png)'
+        path: 'url(./img-sorter/trash/leaves.png)'
       },
       {
         sort: 'mix',
-        path: 'url(./img/trash/cup-mix.png)'
+        path: 'url(./img-sorter/trash/cup-mix.png)'
       },
       {
         sort: 'mix',
-        path: 'url(./img/trash/tube.png)'
+        path: 'url(./img-sorter/trash/tube.png)'
       },
       {
         sort: 'mix',
-        path: 'url(./img/trash/fish-bone.png)'
+        path: 'url(./img-sorter/trash/fish-bone.png)'
       },
       {
         sort: 'mix',
-        path: 'url(./img/trash/toy.png)'
+        path: 'url(./img-sorter/trash/toy.png)'
       },
     ];
 
@@ -100,7 +100,7 @@ export function  showSorterMenu() {
     let nextRandom = 0;
     let score = 0;
     let lives = 3;
-    let countForSpeed = 0;   //dla speedUp() function
+    let countForSpeed = 0;   //for speedUp() function
 
     //create all the cells for grid
     const gameOverDisplay = gameOverMenu();
