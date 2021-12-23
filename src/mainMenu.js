@@ -5,6 +5,7 @@ import { showOznaczeniaMenu } from './oznaczenia';
 import { showRankingMenu } from './ranking';
 import { showSorterMenu } from './sorter';
 
+
 export function showMainMenu() {
   document.querySelector('#app').innerHTML = `  
     <div class="container">
@@ -23,27 +24,27 @@ export function showMainMenu() {
     const base = document.getElementById('base');
     const ranking = document.getElementById('ranking');
 
-    game.addEventListener('click', () => {;
+    game.addEventListener('click', () => {
         showSorterMenu()
     })
 
-    signs.addEventListener('click', () => {;
+    signs.addEventListener('click', () => {
         showOznaczeniaMenu()
     })
 
-    quiz.addEventListener('click', () => {;
+    quiz.addEventListener('click', () => {
         showQuizMenu()
     })
 
-    air.addEventListener('click', () => {;
+    air.addEventListener('click', () => {
         showWeatherMenu()
     })
 
-    base.addEventListener('click', () => {;
+    base.addEventListener('click', () => {
         showBazaWiedzy()
     })
 
-    ranking.addEventListener('click', () => {;
+    ranking.addEventListener('click', () => {
         showRankingMenu()
     })
 
