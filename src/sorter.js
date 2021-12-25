@@ -5,7 +5,7 @@ export function  showSorterMenu() {
     const head = document.querySelector('head');
     let link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', './sorter.css');
+    link.setAttribute('href', './src/sorter.css');
     head.appendChild(link);
 
     const APP = document.querySelector('.container');
