@@ -1,4 +1,5 @@
 import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { showQuizEndWindow } from 'end.js';
 
 let LinksHrefArray = ['./src/quiz.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
@@ -152,7 +153,7 @@ function selectAnswer(e) {
   }
 
   function showMyScore() {
-    window.location.assign('/end.html');
+    showQuizEndWindow();
   }
 
   function setStatusClass(element, correct) {

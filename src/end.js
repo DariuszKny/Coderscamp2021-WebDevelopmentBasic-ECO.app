@@ -1,14 +1,13 @@
-import { makeReferenceLinks } from './makeReferenceLinks.js';
+export function  showQuizEndWindow() {
+    import { makeReferenceLinks } from './makeReferenceLinks.js';
 
-let LinksHrefArray = ['./src/quiz.css',
+    let LinksHrefArray = ['./src/quiz.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/fontawesome.css',
                       'https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Quicksand&display=swap'];
 
-LinksHrefArray.forEach(makeReferenceLinks);
+    LinksHrefArray.forEach(makeReferenceLinks);
 
-
-export function  showQuizEndWindow() {
     document.querySelector('#app').innerHTML = `  
     <div class="container">
         <div id="end">
@@ -20,11 +19,18 @@ export function  showQuizEndWindow() {
             </form>
             <a href="/index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i>Strona Główna</a>
         </div>
-    </div>
-    <script type="module" src="./src/end.js"></script>`;
+    </div>`;
+
+    const finalScore = document.querySelector('#finalScore');
+    const mostRecentScore = localStorage.getItem('mostRecentScore');
+    
+    finalScore.innerText =mostRecentScore;
 }
 
-const finalScore = document.querySelector('#finalScore');
-const mostRecentScore = localStorage.getItem('mostRecentScore');
 
-finalScore.innerText =mostRecentScore;
+
+
+
+
+
+
