@@ -5,7 +5,7 @@ export function  showSorterMenu() {
     const head = document.querySelector('head');
     let link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', './sorter.css');
+    link.setAttribute('href', './src/sorter.css');
     head.appendChild(link);
 
     const APP = document.querySelector('.container');
@@ -314,7 +314,7 @@ export function  showSorterMenu() {
       restartBtn.classList.add('btn');
       restartBtn.innerHTML = 'Restart';
       lastScoreWrapper.appendChild(restartBtn);
-      restartBtn.addEventListener('click', removeSorterScore);
+      restartBtn.addEventListener('click', restartFn);
 
       let gameOverParent = document.querySelector('.game-over');
       gameOverParent.appendChild(lastScoreWrapper);
@@ -329,21 +329,21 @@ export function  showSorterMenu() {
         inputName.classList.remove('wrong');
         let approveBtn = document.querySelector('.btn-approve');
         approveBtn.removeEventListener('click', addAppScore);
-        approveBtn.classList.add('disable');
-        let appScore = JSON.parse(localStorage.getItem('gameRanking')) || {};
-        appScore.nameg = document.querySelector('.game-over__score_input').value;
-        let currentScoreg = +appScore.scoreg || 0;
-        let sorterScore = +document.querySelector('.score_current').innerHTML;
-        console.log(currentScoreg + ' to currentScoreg');
-        console.log(sorterScore + ' to sorterScore');
-        appScore.scoreg = currentScoreg + sorterScore;
-        localStorage.setItem('gameRanking', JSON.stringify(appScore));
+        approveBtn.setAttribute('disabled', 'disabled');
+
+        let sorterScore = JSON.parse(localStorage.getItem('gameRanking')) || [];
+        let wynik = {
+          scoreg: document.querySelector('.score_current').innerHTML,
+          nameg: document.querySelector('.game-over__score_input').value,
         }
-      
+
+        sorterScore.push(wynik);
+        
+        localStorage.setItem('gameRanking', JSON.stringify(sorterScore));
+        }
     }
 
-    function removeSorterScore() {
-      localStorage.removeItem('sorterScore');
+    function restartFn() {
       document.location.reload();  
     }
 
