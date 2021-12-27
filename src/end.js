@@ -1,7 +1,6 @@
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 
 export function  showQuizEndWindow() {
-
     let LinksHrefArray = ['./src/quiz.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/fontawesome.css',
@@ -26,7 +25,7 @@ export function  showQuizEndWindow() {
     const mostRecentScore = localStorage.getItem('mostRecentScore');
     
     finalScore.innerText =mostRecentScore;
-}
+};
 
 
 
