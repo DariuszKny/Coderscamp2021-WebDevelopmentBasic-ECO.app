@@ -34,7 +34,7 @@
     position: absolute;
     right: 0;
     width: 400px;
-    background-image: linear-gradient(to bottom, #ff8a00, #e52e71);
+    background-image: linear-gradient(to bottom, #ffe600, #932ee5);
     height: 100%;
     transition: all 0.7s ease-in;
   }
@@ -61,7 +61,6 @@
   }
 
   .btn:hover {
-    background-image: linear-gradient(to right,#f7f6d7, #6df0ae);
     cursor: pointer;
   }
 
@@ -75,15 +74,6 @@
 
   .btn-start.selected {
     background-image: linear-gradient(to right,#f7f6d7, #6df0ae);
-  }
-
-  .btn-approve.disable {
-    background-color: gray;
-  }
-
-  .btn-approve.disable:hover {
-    background-image: gray;
-    cursor: default;
   }
 
   .trash { 
@@ -137,7 +127,7 @@
   }
 
   .game-over__score_input.wrong {
-    border: greenyellow 2px solid;
+    border: red 2px solid;
   }
  
   .score_current {
