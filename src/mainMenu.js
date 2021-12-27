@@ -1,9 +1,14 @@
-import { showQuizMenu } from './quizz';
-import { showWeatherMenu } from './apiwether';
-import { showBazaWiedzy } from './bazawiedzy';
-import { showOznaczeniaMenu } from './oznaczenia';
-import { showRankingMenu } from './ranking';
-import { showSorterMenu } from './sorter';
+import { showQuizMenu } from './quiz.js';
+import { showWeatherMenu } from './apiwether.js';
+import { showBazaWiedzy } from './bazawiedzy.js';
+import { showOznaczeniaMenu } from './oznaczenia.js';
+import { showRankingMenu } from './ranking.js';
+import { showSorterMenu } from './sorter.js';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
+
+removeReferenceLinks();
+makeReferenceLinks("./src/mainMenu.css");
 
 
 export function showMainMenu() {

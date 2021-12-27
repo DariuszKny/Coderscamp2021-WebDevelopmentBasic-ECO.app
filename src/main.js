@@ -1,10 +1,9 @@
-import './style.css';
-import { showMainMenu } from './mainMenu';
+import { showMainMenu } from './mainMenu.js';
 
-showMainMenu()
+showMainMenu();
 
 const mainMenuButton = document.getElementById('mainMenuButton');
 
 mainMenuButton.addEventListener('click', () => {
-    showMainMenu()
+    showMainMenu();
 })
