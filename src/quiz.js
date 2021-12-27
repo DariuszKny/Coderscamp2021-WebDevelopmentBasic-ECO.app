@@ -42,7 +42,7 @@ export function  showQuizMenu() {
           <button class="btn btn-answer">Answer 4</button>
         </div>
       </div>
-      <div id="quiz-info-container" class="container">
+      <div id="quiz-info-container">
         <h1>Quiz wiedzy</h1>
         <p>Przed Tobą 20 pytań dotyczących tematyki sortowania odpadów oraz szeroko pojętego ekologicznego stylu życia.
           Pytania są jednokrotnego wyboru. Rozwiązanie całego testu zajmie Ci kilka minut.<br>Jesteś gotowy?</p>
