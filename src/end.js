@@ -1,5 +1,6 @@
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+
 export function  showQuizEndWindow() {
-    import { makeReferenceLinks } from './makeReferenceLinks.js';
 
     let LinksHrefArray = ['./src/quiz.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',

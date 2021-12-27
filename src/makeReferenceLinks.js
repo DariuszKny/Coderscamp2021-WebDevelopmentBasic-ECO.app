@@ -6,5 +6,5 @@ export function makeReferenceLinks(hrefElement){
     link.type = 'text/css';
   
     document.head.appendChild(link);
-    console.log(link);
+
   }

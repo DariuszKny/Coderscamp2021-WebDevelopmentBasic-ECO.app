@@ -1,5 +1,5 @@
 import { makeReferenceLinks } from './makeReferenceLinks.js';
-import { showQuizEndWindow } from 'end.js';
+import { showQuizEndWindow } from './end.js';
 
 let LinksHrefArray = ['./src/quiz.css',
                       './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
@@ -54,8 +54,6 @@ export function  showQuizMenu() {
     </div>
   </div>
   <script type="module" src="./src/quiz.js"></script>`;
-}
-
 
 const quizInfoContainerElement = document.getElementById('quiz-info-container');
 const quizBarElement = document.getElementById('quiz-bar');
@@ -193,4 +191,7 @@ function resetState(){
     while (answerButtonsElement.firstChild) {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
+};
 }
+
+

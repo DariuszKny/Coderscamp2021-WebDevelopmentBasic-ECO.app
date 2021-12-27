@@ -1,6 +1,10 @@
-import './style.css';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { showMainMenu } from './mainMenu.js';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`;
+showMainMenu();
+
+const mainMenuButton = document.getElementById('mainMenuButton');
+
+mainMenuButton.addEventListener('click', () => {
+    showMainMenu();
+});
