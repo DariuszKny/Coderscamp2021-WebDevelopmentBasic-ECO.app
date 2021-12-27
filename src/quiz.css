@@ -21,14 +21,14 @@ body {
   color: black;
 }
 
-h1{
+.quiz-container h1{
   font-size: 3rem;
   font-family: 'Nunito', sans-serif;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-p {
+.quiz-container p {
   line-height: 1.6;
   font-size: 1.8rem;
   letter-spacing: 1.1px;
@@ -37,7 +37,7 @@ p {
   font-family: 'Quicksand', sans-serif;
 }
 
-.container {
+.quiz-container {
   justify-content: center;
   align-items: center;
   max-width: 80rem;

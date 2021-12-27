@@ -42,7 +42,7 @@ export function  showQuizMenu() {
           <button class="btn btn-answer">Answer 4</button>
         </div>
       </div>
-      <div id="quiz-info-container" class="container">
+      <div id="quiz-info-container">
         <h1>Quiz wiedzy</h1>
         <p>Przed Tobą 20 pytań dotyczących tematyki sortowania odpadów oraz szeroko pojętego ekologicznego stylu życia.
           Pytania są jednokrotnego wyboru. Rozwiązanie całego testu zajmie Ci kilka minut.<br>Jesteś gotowy?</p>
@@ -54,65 +54,65 @@ export function  showQuizMenu() {
     </div>
   </div>
   <script type="module" src="./src/quiz.js"></script>`;
+  
+  const quizInfoContainerElement = document.getElementById('quiz-info-container');
+  const quizBarElement = document.getElementById('quiz-bar');
+  const startButton = document.getElementById('start-btn');
+  const nextButton = document.getElementById('next-btn');
+  const questionContainerElement = document.getElementById('question-container');
+  const questionElement = document.getElementById('question');
+  const questionImage = document.getElementById('question-image')
+  const questionFrameElement = document.querySelector('.question-frame');
+  const answerButtonsElement = document.getElementById('answer-buttons');
+  const imageElement = document.getElementById('question-image');
+  const progressText = document.querySelector('#progressText');
+  const scoreText = document.querySelector('#score');
+  const progressBarFull = document.querySelector('#progressBarFull');
 
-const quizInfoContainerElement = document.getElementById('quiz-info-container');
-const quizBarElement = document.getElementById('quiz-bar');
-const startButton = document.getElementById('start-btn');
-const nextButton = document.getElementById('next-btn');
-const questionContainerElement = document.getElementById('question-container');
-const questionElement = document.getElementById('question');
-const questionImage = document.getElementById('question-image')
-const questionFrameElement = document.querySelector('.question-frame');
-const answerButtonsElement = document.getElementById('answer-buttons');
-const imageElement = document.getElementById('question-image');
-const progressText = document.querySelector('#progressText');
-const scoreText = document.querySelector('#score');
-const progressBarFull = document.querySelector('#progressBarFull');
+  let shuffledQuestions, currentQuestionIndex;
+  let score =0;
+  let questionCounter =0;
+  let SCORE_POINTS = 100;
+  let MAX_QUESTIONS = 20;
 
-let shuffledQuestions, currentQuestionIndex;
-let score =0;
-let questionCounter =0;
-let SCORE_POINTS = 100;
-let MAX_QUESTIONS = 20;
-
-startButton.addEventListener('click', startGame);
-nextButton.addEventListener('click', () => {
-    currentQuestionIndex++;
-    setNextQuestion();
-  });
-
-let questions = [];
-
-fetch('src/quiz.json')
-    .then((res) => {
-        return res.json();
-    })
-    .then((loadedQuestions) => {
-        questions = loadedQuestions;
-    })
-    .catch((err) => {
-        console.error(err);
+  startButton.addEventListener('click', startGame);
+  nextButton.addEventListener('click', () => {
+      currentQuestionIndex++;
+      setNextQuestion();
     });
 
-function startGame(){
-    questionCounter = 0;
-    score = 0;
-    scoreText.innerText = 0;
-    
-    startButton.classList.add('hide');
-    quizInfoContainerElement.classList.add('hide');
-    questionFrameElement.classList.remove('hide');
-    quizBarElement.classList.remove('hide');
+  let questions = [];
 
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    shuffledQuestions = shuffledQuestions.slice(0,20);
-    currentQuestionIndex = 0;
+  fetch('src/quiz.json')
+      .then((res) => {
+          return res.json();
+      })
+      .then((loadedQuestions) => {
+          questions = loadedQuestions;
+      })
+      .catch((err) => {
+          console.error(err);
+      });
 
-    questionContainerElement.classList.remove('hide');
-    
-    if(questionCounter<20){
-      setNextQuestion();
-    }
+  function startGame(){
+      questionCounter = 0;
+      score = 0;
+      scoreText.innerText = 0;
+      
+      startButton.classList.add('hide');
+      quizInfoContainerElement.classList.add('hide');
+      questionFrameElement.classList.remove('hide');
+      quizBarElement.classList.remove('hide');
+
+      shuffledQuestions = questions.sort(() => Math.random() - .5);
+      shuffledQuestions = shuffledQuestions.slice(0,20);
+      currentQuestionIndex = 0;
+
+      questionContainerElement.classList.remove('hide');
+      
+      if(questionCounter<20){
+        setNextQuestion();
+      }
     
 };
 
@@ -190,8 +190,6 @@ function resetState(){
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
+    };
+  };
 };
-}
-
-
