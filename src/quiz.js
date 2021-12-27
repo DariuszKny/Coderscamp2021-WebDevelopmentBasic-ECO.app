@@ -54,9 +54,7 @@ export function  showQuizMenu() {
     </div>
   </div>
   <script type="module" src="./src/quiz.js"></script>`;
-}
-
-
+  
 const quizInfoContainerElement = document.getElementById('quiz-info-container');
 const quizBarElement = document.getElementById('quiz-bar');
 const startButton = document.getElementById('start-btn');
@@ -192,5 +190,8 @@ function resetState(){
     nextButton.classList.add('hide');
     while (answerButtonsElement.firstChild) {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
+    };
 }
+}
+
+
