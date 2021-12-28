@@ -149,13 +149,9 @@ export function  showQuizMenu() {
         nextButton.classList.remove('hide');
       } else {
           localStorage.setItem('mostRecentScore', score);
-          const myScore= setTimeout(showMyScore,800);
+          const myScore= setTimeout(showQuizEndWindow(),800);
           return  myScore;
       }
-    }
-
-    function showMyScore() {
-      showQuizEndWindow();
     }
 
     function setStatusClass(element, correct) {
