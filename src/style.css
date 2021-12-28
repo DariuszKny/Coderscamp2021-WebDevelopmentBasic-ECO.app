@@ -209,15 +209,15 @@ li, li2, li3, li4{
   .rankingcontainer{
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    height:100vh;
+
   }
   .tabtitle{
     grid-column:span 1;
     text-align: center;
     align-self: center;
    }
-  footer{
-    position:fixed;
-  }
+  
   }
     
 
