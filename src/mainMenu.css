@@ -1,10 +1,33 @@
-body {
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0px;
+  }
+  
+  .header {
+    text-align: center;
+    color: black;
+    background-color: rgb(210, 247, 184);
+  }
+  * {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  html,
+  body {
+    background-color: rgb(243, 234, 234);
+    height: 100vh;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.container {
+  }
+  
+  .container {
     display: grid;
     grid-template-columns: 250px 250px 250px;
     grid-template-rows: 250px 250px;
@@ -46,8 +69,7 @@ body {
     font-size: 15px;
     font-weight: 600;
   }
-  
-  
+ 
   
   @media only screen and (max-width: 570px) {
     .container {
