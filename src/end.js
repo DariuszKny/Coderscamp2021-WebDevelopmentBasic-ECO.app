@@ -10,9 +10,7 @@ document.querySelector('#app').innerHTML = `
             </form>
             <a href="/index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i>Strona Główna</a>
         </div>
-    </div>
-    <script type="module" src="./src/end.js"></script>`;
-
+    </div>`;
     const finalScore = document.querySelector('#finalScore');
     const mostRecentScore = localStorage.getItem('mostRecentScore');
 
