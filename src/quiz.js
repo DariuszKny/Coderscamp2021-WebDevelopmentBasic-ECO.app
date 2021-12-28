@@ -117,7 +117,7 @@ export function  showQuizMenu() {
       if(questionCounter<20){
         setNextQuestion();
       }
-      
+    
   };
 
   function setNextQuestion(){
@@ -152,11 +152,11 @@ export function  showQuizMenu() {
           const myScore= setTimeout(showMyScore,800);
           return  myScore;
       }
-    };
+    }
 
     function showMyScore() {
       showQuizEndWindow();
-    };
+    }
 
     function setStatusClass(element, correct) {
       clearStatusClass(element);
@@ -165,12 +165,12 @@ export function  showQuizMenu() {
       } else {
         element.classList.add('wrong');
       }
-    };
+    }
     
     function clearStatusClass(element) {
       element.classList.remove('correct');
       element.classList.remove('wrong');
-    };
+    }
     
 
   function showQuestion(question){
@@ -194,9 +194,7 @@ export function  showQuizMenu() {
       nextButton.classList.add('hide');
       while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-      }
-  };
+      };
+    };
  };
-
-
 

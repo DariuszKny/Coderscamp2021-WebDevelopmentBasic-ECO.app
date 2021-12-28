@@ -1,7 +1,5 @@
-import { makeReferenceLinks } from './makeReferenceLinks.js';
-
 export function  showQuizEndWindow() {
-    document.querySelector('#app').innerHTML = `  
+document.querySelector('#app').innerHTML = `  
     <div class="quiz-container">
     <div id="end">
             <h1 id="finalScore">0</h1>

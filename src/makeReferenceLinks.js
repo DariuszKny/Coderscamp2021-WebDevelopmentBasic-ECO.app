@@ -1,6 +1,5 @@
 const containerWithReferenceLinks = document.getElementById('containerWithReferenceLinks');
 
-
 export function makeReferenceLinks(hrefElement){
     let link = document.createElement('link');
 
@@ -13,3 +12,4 @@ export function makeReferenceLinks(hrefElement){
     }
    
   };
+  

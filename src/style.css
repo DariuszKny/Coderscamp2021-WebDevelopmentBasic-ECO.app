@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  
+}
 
 .header {
   display: block;
@@ -5,28 +11,8 @@
   color: black;
   background-color: rgb(210, 247, 184);
 }
-h1#mainMenuButton {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0px;
-}
-
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
-
-html,body {
-  background-color: rgb(243, 234, 234);
-  height: 100%;
-}
 
 .footer {
-  display: block;
   background-color: rgb(210, 247, 184);
   text-align: center;
   bottom: 0;
@@ -46,4 +32,16 @@ html,body {
   padding-left: 10px;
 }
 
+@media only screen and (max-width: 570px) {
+  .container {
+    grid-template-columns: 250px;
+    grid-template-rows: 250px;
+  }
+}
+@media only screen and (min-width: 570px) and (max-width: 870px) {
+  .container {
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+  }
+}
 
