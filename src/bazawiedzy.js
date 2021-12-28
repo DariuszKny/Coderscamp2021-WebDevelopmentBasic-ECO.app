@@ -1,6 +1,6 @@
 import './style.css';
-
-document.querySelector('#app').innerHTML = `
+export function showBazaWiedzy(){
+    document.querySelector('#app').innerHTML = `
 <div class="carousel">
         <div class="carousel-buttons ">
             <button class="carousel-button carousel-button_previous">
@@ -231,4 +231,8 @@ function handlePrevious() {
 buttonNext.addEventListener("click",handleNext);
 
 buttonPrevious.addEventListener("click",handlePrevious);
+
+
+}
+
 
