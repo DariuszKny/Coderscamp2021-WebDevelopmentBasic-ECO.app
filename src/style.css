@@ -4,5 +4,101 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+}
+
+.header {
+  text-align: center;
+  color: black;
+  background-color: rgb(210, 247, 184);
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+html,
+body {
+  background-color: rgb(243, 234, 234);
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 250px 250px;
+  justify-items: start;
+  align-items: center;
+  justify-content: center;
+  place-items: stretch stretch;
+  grid-gap: 10%;
+  height: inherit;
+  margin-top: 10px;
+}
+button {
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+}
+.button:hover {
+  background-color: rgb(223, 240, 211);
+}
+
+.item {
+  display: grid;
+  grid-gap: 10px 10px;
+  border: solid black 1px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.img {
+  min-width: 150px;
+  min-height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  place-self: center;
+}
+
+.menudescript {
+  align-self: end;
+  justify-self: center;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.footer {
+  background-color: rgb(210, 247, 184);
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pfooter {
+  display: inline;
+  font-size: 20px;
+}
+
+.logo {
+  max-width: 55px;
+  max-height: 55px;
+  padding-right: 60px;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 570px) {
+  .container {
+    grid-template-columns: 250px;
+    grid-template-rows: 250px;
+  }
+}
+@media only screen and (min-width: 570px) and (max-width: 870px) {
+  .container {
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 250px 250px;
+  }
 }
