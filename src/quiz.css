@@ -21,6 +21,20 @@ body {
   line-height: 1.6;
   font-size: 1.8rem;
   letter-spacing: 1.1px;
+}
+
+.quiz-container h1{
+  font-size: 3rem;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-container p {
+  line-height: 1.6;
+  font-size: 1.8rem;
+  letter-spacing: 1.1px;
+  margin-bottom: 2rem;
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
@@ -35,18 +49,13 @@ p.intro {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  justify-content: center;
-  align-items: center;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 2rem;
 }
 
 /* Quiz Style */
 
 #quiz-info-container h1 {
   text-transform: uppercase;
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 
 #hud {

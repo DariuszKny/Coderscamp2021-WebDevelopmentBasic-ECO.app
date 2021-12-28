@@ -3,7 +3,7 @@ import { makeReferenceLinks } from './makeReferenceLinks.js';
 export function  showQuizEndWindow() {
     document.querySelector('#app').innerHTML = `  
     <div class="quiz-container">
-        <div id="end">
+    <div id="end">
             <h1 id="finalScore">0</h1>
             <form class="end-form-container">
                 <h2 id="end-text">Podaj swój nick, aby zapisać wynik!</h2>

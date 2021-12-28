@@ -13,7 +13,7 @@ export function  showQuizMenu() {
   LinksHrefArray.forEach(makeReferenceLinks);
 
   document.querySelector('#app').innerHTML = `  
-  <div class=".quiz-container">
+  <div class=".quiz-container">       
     <div id="quiz-bar" class="hide">
       <div id="hud">
         <div class="hud-item">
@@ -47,7 +47,9 @@ export function  showQuizMenu() {
       </div>
       <div id="quiz-info-container">
         <h1>Quiz wiedzy</h1>
+
         <p class="intro">Przed Tobą 20 pytań dotyczących tematyki sortowania odpadów oraz szeroko pojętego ekologicznego stylu życia.
+
           Pytania są jednokrotnego wyboru. Rozwiązanie całego testu zajmie Ci kilka minut.<br>Jesteś gotowy?</p>
       </div>
       <div class="controls">
@@ -55,9 +57,8 @@ export function  showQuizMenu() {
         <button id="next-btn" class="next-btn btn hide">Następne pytanie</button>
       </div>
     </div>
-  </div>
-  <script type="module" src="./src/quiz.js"></script>`;
-
+  </div>`
+  
   const quizInfoContainerElement = document.getElementById('quiz-info-container');
   const quizBarElement = document.getElementById('quiz-bar');
   const startButton = document.getElementById('start-btn');
@@ -151,11 +152,11 @@ export function  showQuizMenu() {
           const myScore= setTimeout(showMyScore,800);
           return  myScore;
       }
-    }
+    };
 
     function showMyScore() {
       showQuizEndWindow();
-    }
+    };
 
     function setStatusClass(element, correct) {
       clearStatusClass(element);
@@ -164,12 +165,12 @@ export function  showQuizMenu() {
       } else {
         element.classList.add('wrong');
       }
-    }
+    };
     
     function clearStatusClass(element) {
       element.classList.remove('correct');
       element.classList.remove('wrong');
-    }
+    };
     
 
   function showQuestion(question){
@@ -194,8 +195,8 @@ export function  showQuizMenu() {
       while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild(answerButtonsElement.firstChild);
       }
-  }
+  };
+ };
 
-}
 
 
