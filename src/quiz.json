@@ -2512,7 +2512,7 @@
       "image": "apple_core.jpg",
       "answers": [
         {
-          "text": "1-6 miesięcy",
+          "text": "ok. 2 miesiące",
           "correct": true
         },
         {
@@ -2528,6 +2528,50 @@
           "correct": false
         }
       ]
+    },
+    {
+        "question": "Jak długo rozkładają się aluminiowe puszki?",
+        "image": "metal41.jpg",
+        "answers": [
+          {
+            "text": "1 rok",
+            "correct": false
+          },
+          {
+            "text": "25 lat",
+            "correct": false
+          },
+          {
+            "text": "50 lat",
+            "correct": true
+          },
+          {
+            "text": "100 lat",
+            "correct": false
+          }
+        ]
+    },
+    {
+        "question": "Jak długo rozkładają się opony?",
+        "image": "tire.jpg",
+        "answers": [
+          {
+            "text": "80 lat",
+            "correct": true
+          },
+          {
+            "text": "200 lat",
+            "correct": false
+          },
+          {
+            "text": "nigdy się nie rozłoży",
+            "correct": false
+          },
+          {
+            "text": "430 lat",
+            "correct": false
+          }
+        ]
     },
     {
       "question": "Ile lat rozkłada się papieros?",
@@ -2706,6 +2750,50 @@
       ]
     },
     {
+        "question": "Jak długo rozkładają się chusteczki higieniczne?",
+        "image": "tissue.jpg",
+        "answers": [
+          {
+            "text": "3 dni",
+            "correct": false
+          },
+          {
+            "text": "3 miesiące",
+            "correct": true
+          },
+          {
+            "text": "3 lata",
+            "correct": false
+          },
+          {
+            "text": "30 lat",
+            "correct": false
+          }
+        ]
+    },
+    {
+        "question": "Gdzie wyrzucamy wilgotne chusteczki wykonane z biodegradowalnych materiałów?",
+        "image": "wet_tissue.jpg",
+        "answers": [
+          {
+            "text": "odpady zmieszane",
+            "correct": true
+          },
+          {
+            "text": "bio",
+            "correct": false
+          },
+          {
+            "text": "tworzywa sztuczne",
+            "correct": false
+          },
+          {
+            "text": "na kompostownik",
+            "correct": false
+          }
+        ]
+    },
+    {
       "question": "Co oznacza taki symbol na opakowaniu?",
       "image": "ponowne.png",
       "answers": [
@@ -2758,7 +2846,7 @@
           "correct": false
         },
         {
-          "text": "Oznacza, że produkt jest przyjazny dla środowiska i zdrowi",
+          "text": "Oznacza, że produkt jest przyjazny dla środowiska i zdrowia",
           "correct": true
         },
         {
@@ -2795,7 +2883,7 @@
     },
     {
       "question": "Co oznacza taki symbol na opakowaniu?",
-      "image": "las.png",
+      "image": "las.jpg",
       "answers": [
         {
           "text": "Produkt zrobiony jest z drewna pochodzącego z lasu zarządzanego zgodnie z ekologicznymi zasadami",
