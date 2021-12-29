@@ -1,4 +1,5 @@
-import './style.css';
+import './bazaWiedzy.css';
+
 export function showBazaWiedzy(){
     document.querySelector('#app').innerHTML = `
 <div class="carousel">
@@ -39,7 +40,7 @@ export function showBazaWiedzy(){
                             </ul>
                         </div>
                         <div class="container-img_1" >
-                            <img class="img-1" src="images/eko1.jpg"/>
+                            <img class="img-1" src="resource/eko1.jpg"/>
                         </div>
                     </div>
                     <div class="text-container text-1_4">
@@ -50,14 +51,14 @@ export function showBazaWiedzy(){
             <div class="slide">
                 <div class="container-2">
                     <div class="content-2">
-                        <img src="images/Tablica-edukacyjna-Rozklad-odpadow-w-czasie.jpg"/>
+                        <img src="resource/Tablica-edukacyjna-Rozklad-odpadow-w-czasie.jpg"/>
                     </div>
                 </div> 
             </div>
             <div class="slide">
                 <div class="container-3">
                     <div class="content-3">
-                        <img src="images/piramida-zero-waste-w.jpg"/>
+                        <img src="resource/piramida-zero-waste-w.jpg"/>
                         <p>W stylu życia jakim jest Zero Waste istotną rolę odgrywają nasze codzienne wybory - oparte na minimalizmie i rozsądnym samoograniczaniu konsumpcji. W rezultacie prowadzą one do mniejszego zanieczyszczenia środowiska. Żeby łatwiej to zrozumieć, wystarczy zapoznać się z zasadami 5R.</p>
                     </div>
                 </div> 
