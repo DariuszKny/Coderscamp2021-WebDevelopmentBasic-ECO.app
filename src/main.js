@@ -1,5 +1,9 @@
-import './style.css';
-import { showMainMenu } from './mainMenu';
+import { showMainMenu } from './mainMenu.js';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
+
+removeReferenceLinks();
+makeReferenceLinks('./src/mainMenu.css');
 
 showMainMenu()
 
@@ -7,5 +11,6 @@ showMainMenu()
 const mainMenuButton = document.getElementById('mainMenuButton');
 
 mainMenuButton.addEventListener('click', () => {
-    showMainMenu()
+    document.location.reload()
 })
+

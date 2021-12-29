@@ -4,6 +4,11 @@ import { showBazaWiedzy } from './bazawiedzy';
 import { showOznaczeniaMenu } from './oznaczenia';
 import { showRankingMenu } from './ranking';
 import { showSorterMenu } from './sorter';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
+
+removeReferenceLinks();
+makeReferenceLinks("./src/mainMenu.css");
 
 export function showMainMenu() {
   document.querySelector('#app').innerHTML = `  

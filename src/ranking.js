@@ -1,4 +1,10 @@
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
+
 export function  showRankingMenu() {
+    removeReferenceLinks();
+    makeReferenceLinks('./src/ranking.css');
+
     document.querySelector('#app').innerHTML = `  
     <div class="rankingcontainer">
     <h1 class="tabtitle"> Tabela wyników </h1>
