@@ -1,80 +1,60 @@
-* {
-  box-sizing: border-box;
-  padding: 0px;
-  margin: 0px;
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 0px;
+  }
   
-}
-
-.header{
+  .header{
   text-align:center;
   color:black;
   background-color:rgb(210, 247, 184);
   font-family: 'Arial Narrow';
   }
-
-.footer {
   
-  background-color: rgb(210, 247, 184);
-  
-  align-items: center;
-  bottom: 0;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.pfooter {
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  justify-content:center;
-  font-size: 1.4rem;
-  align-items: center;
-  justify-content:center;
-  margin: 0 auto;
-}
-
-#mainMenuButton{
-  background: none;
-  border: none;
-  padding: 0;
-  font-size:25px;
-  cursor: pointer;
-  box-shadow:none;
-}
-
-
-.logo {
-  height: 55px;
-  padding: 0 1rem;
-}
-
-@media only screen and (min-width: 570px) and (max-width: 870px) {
-  .container {
-    grid-template-columns: 250px 250px;
-    grid-template-rows: 250px 250px 250px;
-    grid-gap:20px;
-  }
-}
-
-@media only screen and (max-width: 700px) {
-  footer{
-    position:fixed;
-  }
-  }
-
-  @media only screen and (max-width: 570px) {
-    .container {
-      grid-template-columns: auto;
-        grid-template-rows: auto;    
-        grid-gap:15px;
-    }
-    .button:hover{
-      height:auto;
-      width:auto;
-    }
-  
-    .logo{
-      padding:10px;
-    }
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
   }
   
+  #mainMenuButton{
+      background: none;
+      border: none;
+      padding: 0;
+      font-size:25px;
+      cursor: pointer;
+      box-shadow:none;
+  }
+  
+  html,
+  body {
+    background-color: rgb(243, 234, 234);}
+
+    .footer {
+        background-color: rgb(210, 247, 184);
+        align-items: center;
+        bottom: 0;
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .pfooter {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        justify-content:center;
+        font-size: 1.4rem;
+        align-items: center;
+        justify-content:center;
+        margin: 0 auto;
+      }
+      
+      .logo {
+        max-width: 55px;
+        max-height: 55px;
+        padding-right: 60px;
+        padding-left: 10px;
+      }
