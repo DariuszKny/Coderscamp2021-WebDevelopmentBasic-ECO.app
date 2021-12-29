@@ -1,5 +1,5 @@
 import './style.css';
-import { showMainMenu } from './mainMenu';
+import { showMainMenu } from './mainMenu.js';
 
 showMainMenu()
 
