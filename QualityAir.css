@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --airQuality-Good: #2e6e43;
+  --airQuality-Moderate: #46af69;
+  --airQuality-UnhealthySensitive: #ebfc00;
+  --airQuality-Unhealthy: #ffa500;;
+  --airQuality-VeryUnhealthy: #ff0000;
+  --airQuality-Hazardous: #a52a2a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 0,625%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 25vh;
+  background-color: #F2F0F5;
+  font-family: 'Lato', sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__text {
+  margin-bottom: 1em;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.main__search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__input {
+  height: 28px;
+  width: 300px;
+  text-align: center;
+  border: 0.2px solid grey;
+  margin-right: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.main__button {
+  height: 1.8rem;
+  width: 5.8rem;
+  color: #FFF;
+  background-color: grey;
+  outline: none;
+  border: 0;
+  border-radius: 1rem;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.main__button:active {
+    transform: scale(0.96);
+}
+
+/* Air Quality Styling */
+
+.main__informations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qualityLevel {
+  margin-top: 2em;
+  padding-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  color: #000;
+  width: 55em;
+  height: 10rem;
+  text-align: center;
+}
+
+.qualityLevel h2 {
+  font-weight: bold;
+  font-size: 2.2rem;
+}
+
+.qualityLevel__noResults {
+  margin-top: 3.5rem;
+}
+
+.qualityLevel__good {
+  background-color: var(--airQuality-Good);
+}
+
+.qualityLevel__moderate {
+  background-color: var(--airQuality-Moderate);
+}
+
+.qualityLevel__unhealthy-sentitive {
+  background-color: var(--airQuality-UnhealthySensitive)
+}
+
+.qualityLevel__unhealthy {
+  background-color: var(--airQuality-Unhealthy)
+}
+
+.qualityLevel__very-unhealthy {
+  background-color: var(--airQuality-VeryUnhealthy)
+}
+
+.qualityLevel__hazardous {
+  background-color: var(--airQuality-Hazardous)
+}
+
+.qualityLevel__unknown {
+  display: none;
+}
+
+
+/* Footer */
+
+
+.footer {
+  min-height: 4vh;
+  margin-top: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.footer i {
+  color: #F00;
+}
+
+.footer__text {
+  position: relative;
+  color: #000;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
