@@ -1,10 +1,14 @@
-import './style.css';
-import { showMainMenu } from './mainMenu';
+import { showMainMenu } from './mainMenu.js';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
 
-showMainMenu()
+removeReferenceLinks();
+makeReferenceLinks('./src/mainMenu.css');
+
+showMainMenu();
 
 const mainMenuButton = document.getElementById('mainMenuButton');
 
 mainMenuButton.addEventListener('click', () => {
-    showMainMenu()
-})
+    showMainMenu();
+});
