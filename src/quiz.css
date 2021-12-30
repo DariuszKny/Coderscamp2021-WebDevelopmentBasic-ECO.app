@@ -20,7 +20,7 @@ body {
   font-size: 1.8rem;
   letter-spacing: 1.1px;
   font-family: 'Quicksand', sans-serif;
-  text-align: center;
+  text-align: left;
 }
 
 .quiz-container h1{
@@ -139,16 +139,16 @@ p.hud-prefix {
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  padding: 0 2rem;
+  padding: 0 2rem;;
 }
 
 .btn {
-  color: white;
-  background: rgb(15, 107, 228);
   border-radius: 4px;
   outline: none;
   text-decoration: none;
   border: none;
+  background: rgb(15, 107, 228);
+  color: white;
 }
 
 #answer-buttons .btn {
@@ -190,14 +190,20 @@ p.hud-prefix {
 }
 
 .btn.correct {
-  background: linear-gradient(32deg, rgb(11,223,36)0%,rgb(41,232,111)100%);
+  background: linear-gradient(32deg, rgb(75, 185, 60)0%,rgb(78, 189, 59)100%);
 }
 
 .btn.wrong {
-  background: linear-gradient(32deg, rgb(250, 47, 47)0%,rgb(247, 58, 58)100%);
+  background: linear-gradient(32deg, rgb(253, 76, 76)0%,rgb(236, 68, 68)100%);
+}
+
+.btn.correct, .btn.wrong {
+  color: white;
 }
 
 #start-btn, #next-btn {
+  color: white;
+  background: rgb(75, 185, 60);
   font-size: 1.5rem;
   font-weight: bold;
   box-shadow: 0 0.1rem 1.4rem 0 rgb(86,185,235,0.5);
