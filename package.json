@@ -22,5 +22,8 @@
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.4.1",
     "vite": "2.5.10"
+  },
+  "dependencies": {
+    "connect": "3.7.0"
   }
 }
