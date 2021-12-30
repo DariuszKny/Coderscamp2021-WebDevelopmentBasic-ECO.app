@@ -1,13 +1,12 @@
 body {
   justify-content: center;
   align-items: center;
-  background:rgb(243, 234, 234);
   color: black;
 }
 
 #app {
   padding: 0 6rem;
-  height: 800px;
+  height: inherit;
 }
 
 #app h1 {
@@ -70,6 +69,7 @@ p.intro {
 }
 
 #quiz-bar {
+  margin-top: 1.2rem;
   align-items: center;
 }
 
@@ -90,7 +90,7 @@ p.hud-prefix {
 #progressBar {
   width: 20rem;
   height: 3rem;
-  border: 0.2rem solid rgb(4, 167, 23);
+  border: 4px solid rgb(4, 167, 23);
   border-radius: 50px;
   overflow: hidden;
   margin-top: 1rem;
@@ -131,6 +131,7 @@ p.hud-prefix {
 
 #question-image img{
   max-width: 300px;
+  max-height: 300px;
 }
 
 #answer-buttons {
@@ -343,5 +344,27 @@ input::placeholder{
   #answer-buttons {
     padding:  0;
   }
+}
+
+@media screen and (max-width : 570px) {
+
+ #app p {
+   font-size: 1.2rem;
+   padding: 0;
+   text-align: left;
+ }
+
+ #app h1 {
+   font-size: 2rem;
+ }
+ #answer-buttons .btn,#start-btn, #next-btn {
+   font-size: 1rem;
+   padding: 1.4rem;
+   margin: 0 0 1.4rem 0;
+ }
+ .correctAnswer::before, .wrongAnswer::before {
+   font-size: 1.2rem;
+   margin-top: 1px;
+ }
 }
 
