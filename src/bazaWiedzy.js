@@ -1,10 +1,12 @@
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
 
-removeReferenceLinks();
-makeReferenceLinks('./src/bazaWiedzy.css');
+
 
 export function showBazaWiedzy(){
+    removeReferenceLinks();
+    makeReferenceLinks('./src/bazaWiedzy.css');
+    
     document.querySelector('#app').innerHTML = `
 <div class="carousel">
         <div class="carousel-buttons ">

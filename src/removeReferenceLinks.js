@@ -2,6 +2,7 @@ const containerWithReferenceLinks = document.getElementById('containerWithRefere
 
 
 export function removeReferenceLinks(){
+  console.log("tutaj");
     
       while (containerWithReferenceLinks.firstChild) {
         containerWithReferenceLinks.removeChild(containerWithReferenceLinks.firstChild);

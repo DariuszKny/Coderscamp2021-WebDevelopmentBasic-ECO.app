@@ -1,53 +1,16 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 20px;
-}
-
-.header {
-  text-align: center;
-  color: black;
-  background-color: rgb(210, 247, 184);
-}
 * {
+  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
-
-html,
-body {
-  background-color: rgb(243, 234, 234);
-}
-
-.footer {
-  background-color: rgb(210, 247, 184);
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  margin-top: 0;
-}
-
-.pfooter {
-  display: inline;
-  font-size: 1.2rem;
-}
-
-.logo {
-  max-width: 45px;
-  max-height: 45px;
-  padding-right: 60px;
-  padding-left: 10px;
-}
-
 .carousel {
   --current-slide: 0;
 
   position: relative;
   overflow: hidden;
   width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .carousel-button {
@@ -86,6 +49,7 @@ body {
 }
 .slide {
   flex: 0 0 100%;
+  margin-top: 0.8rem;
 }
 
 .text-container {
