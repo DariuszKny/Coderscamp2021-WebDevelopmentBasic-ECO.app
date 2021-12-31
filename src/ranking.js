@@ -2,7 +2,6 @@ import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
 
 export function  showRankingMenu() {
-
     removeReferenceLinks();
     makeReferenceLinks('./src/ranking.css');
 
@@ -30,46 +29,59 @@ export function  showRankingMenu() {
          <ul id="scoreg"> 
          </ul>
          </div>
-         </div>  
-         
+         </div>           
     </div>`;
+    
+    const rankingquiz= JSON.parse(localStorage.getItem('quizRanking')) || [];
+    const rankinggame= JSON.parse(localStorage.getItem('gameRanking')) || [];
 
-let username = document.getElementById('name');//nazwa użytkownika z quizu
-let score = document.getElementById('points'); // ilość pkt z quizu
-let usernameg = document.getElementById('nameg'); //nazwa użytwkownika z gry
-let scoreg = document.getElementById('pointsg'); //ilość pkt z gry
+    let ol= document.querySelector('#username');
+    let ul2= document.querySelector('#score');
 
-const quizRanking= JSON.parse(localStorage.getItem('quizRanking')) || [];
-const gameRanking = JSON.parse(localStorage.getItem('gameRanking')) || [];
+    rankingquiz.forEach (wynik => {
+        let li=document.createElement("li"); 
+        let li2=document.createElement("li2");    
+        li.innerHTML= wynik.name;
+        li2.innerHTML= wynik.score;
 
-let ol= document.querySelector('#username');
-let ul2= document.querySelector('#score');
+        ol.appendChild(li);
+        ul2.appendChild(li2);
+       });
 
-quizRanking.forEach(wynik => {
-         let li=document.createElement("li"); 
-         let li2=document.createElement("li2");    
-         li.innerHTML= wynik.name;
-         li2.innerHTML= wynik.score;
+       let olg= document.querySelector('#usernameg');
+       let ul2g= document.querySelector('#scoreg');
 
-         ol.appendChild(li);
-         ul2.appendChild(li2);
-        });
-        
-     let olg= document.querySelector('#usernameg');
-     let ul2g= document.querySelector('#scoreg');
-
-     gameRanking.forEach(wynikg => {
+     rankinggame.forEach(wynik => {
+        let li3=document.createElement("li3"); 
+        let li4=document.createElement("li4");    
                 
-                 let li3=document.createElement("li3"); 
-                 let li4=document.createElement("li4");    
-                
-                 li3.innerHTML= wynikg.nameg;
-                 li4.innerHTML= wynikg.scoreg;
-        
-                 console.log(li3,li4)
-                
-                 olg.appendChild(li3);
-                 ul2g.appendChild(li4);
+         li3.innerHTML= wynik.name;
+         li4.innerHTML= wynik.score;
+                     
+         olg.appendChild(li3);
+         ul2g.appendChild(li4);
                  
-                });
+        });
+}  
+        
+     
+    export function saveHighScore  (score, name, ranking) {
+        const rankingprint= JSON.parse(localStorage.getItem(ranking)) || [];
+        const MAX_HIGH_SCORES = 15;
+
+            let wynik={
+                score: score,
+                name: name,
+            }
+
+            rankingprint.push(wynik);
+              rankingprint.sort((a, b) => b.score - a.score);
+              rankingprint.splice(MAX_HIGH_SCORES);
+    
+            localStorage.setItem(ranking, JSON.stringify(rankingprint));
         }
+            
+
+        
+        
+
