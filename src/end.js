@@ -1,37 +1,51 @@
-import { makeReferenceLinks } from './makeReferenceLinks.js';
-
-export function  showQuizEndWindow() { 
-
-    let LinksHrefArray = ['./src/quiz.css',
-                      './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
-                      './assets/fontawesome-free-6.0.0-beta3-web/css/fontawesome.css',
-                      'https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Quicksand&display=swap'];
-
-    LinksHrefArray.forEach(makeReferenceLinks);
-
-    document.querySelector('#app').innerHTML = `  
-    <div class="container">
-        <div id="end">
+import { showRankingMenu} from './ranking.js'
+export function  showQuizEndWindow() {
+document.querySelector('#app').innerHTML = `  
+    <div class="quiz-container">
+    <div id="end">
             <h1 id="finalScore">0</h1>
             <form class="end-form-container">
                 <h2 id="end-text">Podaj swój nick, aby zapisać wynik!</h2>
                 <input type="text" name="name" id="username" placeholder="Podaj swój nick">
-                <button class="btn" id="saveScoreBtn" type="submit" onclick="saveHighScore(event)">Zapisz</button>
+                <button class="btn" id="saveScoreBtn" type="submit">Zapisz</button>
             </form>
             <a href="/index.html" class="btn back-btn"><i class="fas fa-arrow-left"></i>Strona Główna</a>
         </div>
     </div>`;
-
     const finalScore = document.querySelector('#finalScore');
     const mostRecentScore = localStorage.getItem('mostRecentScore');
-    
+    const saveUsernameInput = document.querySelector('#username');
+    const saveScoreBtn = document.querySelector('#saveScoreBtn');
+    const MAX_HIGH_SCORES = 20;
+
+    const quizRanking= JSON.parse(localStorage.getItem('quizRanking')) || [];
+
+    saveScoreBtn.disabled = false;
     finalScore.innerText =mostRecentScore;
-};
 
+    saveUsernameInput.addEventListener('keyup',() => {
+        saveScoreBtn.disabled = !saveUsernameInput.value;
+        
+    });
 
+   saveScoreBtn.addEventListener("click", saveScoreToRanking);
+   
+   function saveScoreToRanking (event){
+        event.preventDefault();
 
+        const scoreFromQuiz = {
+            score: mostRecentScore,
+            name: saveUsernameInput.value
+        }
 
+        quizRanking.push(scoreFromQuiz);
+        quizRanking.sort((a, b) => {
+            return b.score - a.score
+        });
+        quizRanking.splice(MAX_HIGH_SCORES);
+        localStorage.setItem('quizRanking', JSON.stringify(quizRanking));
+        showRankingMenu();
+     };
 
-
-
+}
 

@@ -5,7 +5,7 @@ import { removeReferenceLinks } from './removeReferenceLinks.js';
 removeReferenceLinks();
 makeReferenceLinks('./src/mainMenu.css');
 
-showMainMenu()
+showMainMenu();
 
 
 const mainMenuButton = document.getElementById('mainMenuButton');
