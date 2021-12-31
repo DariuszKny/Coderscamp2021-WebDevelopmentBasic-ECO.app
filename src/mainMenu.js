@@ -10,7 +10,7 @@ import { removeReferenceLinks } from './removeReferenceLinks.js';
 
 export function showMainMenu() {
     removeReferenceLinks();
-    makeReferenceLinks("./src/mainMenu.css");
+    makeReferenceLinks('./src/mainMenu.css');
   document.querySelector('#app').innerHTML = `  
     <div class="container">
         <div class="item" id="game"><button class="button"><img class="img" src='resource/18966195.png'> <p class="menudescript"> Gra sorter </p></button></div> 
