@@ -52,11 +52,13 @@
   
   .quizbox{
     border-top: solid black 2px;
+    
   }
   
   .gamebox{
     border-top: solid black 2px;
     border-left: solid black 2px;
+    
   }
   ol{
     list-style: none;
@@ -80,19 +82,25 @@
     display:grid;
     grid-template-columns:1fr 60px;
     font-size:20px;
+
   }
   
   .gresult{
     display:grid;
     grid-template-columns:1fr 60px;
-    font-size:20px; 
+    font-size:20px;
   }
   #usernameg{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  
+  #username{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+       
+  }
   #score{
     display: flex;
     flex-direction: column;
@@ -107,26 +115,20 @@
     border-top:solid black 2px;
   }
   
-  @media only screen and (min-width: 570px) and (max-width: 870px) {
-    .container {
-      grid-template-columns: 250px 250px;
-      grid-template-rows: 250px 250px 250px;
-      grid-gap:20px;
-    }
-  }
-  
+
   @media only screen and (max-width: 700px) {
     .rankingcontainer{
       grid-template-columns: 1fr;
       grid-template-rows: auto;
-      height:100vh;
-  
+      height:100vh; 
     }
     .tabtitle{
       grid-column:span 1;
       text-align: center;
       align-self: center;
      }
-    
+     .gamebox{
+      border-left: none;
+     }
     }
       
