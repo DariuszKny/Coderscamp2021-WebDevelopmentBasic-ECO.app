@@ -32,6 +32,7 @@ background: linear-gradient(32deg,rgb(231, 250, 169)0%, rgb(34, 124, 19) 96%);
   margin-top: 8px;
   padding: 0 2rem;
   height: 50px;
+  cursor: pointer;
 }
 
 /*FOOTER STYLE */
