@@ -1,4 +1,4 @@
-import { saveHighScore } from "./ranking";
+import { saveHighScore } from "./ranking.js";
 
 export function  showSorterMenu() {
   document.querySelector('#app').innerHTML = `  
