@@ -6,13 +6,7 @@
     color: #2c3e50;
     margin-top: 0px;
   }
-  
-  .header{
-  text-align:center;
-  color:black;
-  background-color:rgb(210, 247, 184);
-  font-family: 'Arial Narrow';
-  }
+
   
   * {
     padding: 0px;
@@ -37,28 +31,6 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  .footer {
-    background-color: rgb(210, 247, 184);
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    justify-self:end;
-    margin-top:25px;
-  }
-  
-  .pfooter {
-    display: inline;
-    font-size: 20px;
-  }
-  
-  .logo {
-    max-width: 55px;
-    max-height: 55px;
-    padding-right: 60px;
-    padding-left: 10px;
-  }
-    
-
 
 .rankingcontainer{
     display:grid;
