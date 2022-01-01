@@ -2,11 +2,14 @@ export function  showSorterMenu() {
     document.querySelector('#app').innerHTML = `  
     <div class="container"></div>`;
 
-    const head = document.querySelector('head');
-    let link = document.createElement('link');
-    link.setAttribute('rel', 'stylesheet');
-    link.setAttribute('href', './src/sorter.css');
-    head.appendChild(link);
+    removeReferenceLinks();
+    makeReferenceLinks('./src/oznaczenia.css');
+
+    // const head = document.querySelector('head');
+    // let link = document.createElement('link');
+    // link.setAttribute('rel', 'stylesheet');
+    // link.setAttribute('href', './src/sorter.css');
+    // head.appendChild(link);
 
     const APP = document.querySelector('.container');
     const GRID_WIDTH = 5;
