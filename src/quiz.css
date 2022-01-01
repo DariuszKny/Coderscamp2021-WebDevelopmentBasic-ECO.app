@@ -20,7 +20,7 @@ body {
   font-size: 1.8rem;
   letter-spacing: 1.1px;
   font-family: 'Quicksand', sans-serif;
-  text-align: center;
+  text-align: left;
 }
 
 .quiz-container h1{
@@ -132,6 +132,8 @@ p.hud-prefix {
 #question-image img{
   max-width: 300px;
   max-height: 300px;
+  -webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 #answer-buttons {
@@ -143,12 +145,12 @@ p.hud-prefix {
 }
 
 .btn {
-  color: white;
-  background: rgb(15, 107, 228);
   border-radius: 4px;
   outline: none;
   text-decoration: none;
   border: none;
+  background: rgb(15, 107, 228);
+  color: white;
 }
 
 #answer-buttons .btn {
@@ -160,6 +162,8 @@ p.hud-prefix {
   display: flex;
   justify-content: left;
   flex-direction: row-reverse;
+  -webkit-animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: slide-in-fwd-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .btn:hover {
@@ -190,14 +194,20 @@ p.hud-prefix {
 }
 
 .btn.correct {
-  background: linear-gradient(32deg, rgb(11,223,36)0%,rgb(41,232,111)100%);
+  background: linear-gradient(32deg, rgb(75, 185, 60)0%,rgb(78, 189, 59)100%);
 }
 
 .btn.wrong {
-  background: linear-gradient(32deg, rgb(250, 47, 47)0%,rgb(247, 58, 58)100%);
+  background: linear-gradient(32deg, rgb(253, 76, 76)0%,rgb(236, 68, 68)100%);
+}
+
+.btn.correct, .btn.wrong {
+  color: white;
 }
 
 #start-btn, #next-btn {
+  color: white;
+  background: rgb(75, 185, 60);
   font-size: 1.5rem;
   font-weight: bold;
   box-shadow: 0 0.1rem 1.4rem 0 rgb(86,185,235,0.5);
@@ -243,6 +253,58 @@ p.hud-prefix {
 .fas {
   margin: 0 0.5rem 0 0;
 }
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-in-fwd-center
+ * ----------------------------------------
+ */
+ @-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
 
 
 /* END PAGE CSS */
