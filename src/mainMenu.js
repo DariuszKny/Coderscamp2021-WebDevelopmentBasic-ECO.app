@@ -29,27 +29,27 @@ export function showMainMenu() {
     const ranking = document.getElementById('ranking');
 
     game.addEventListener('click', () => {
-        showSorterMenu()
+        showSorterMenu();
     })
 
     signs.addEventListener('click', () => {
-        showOznaczeniaMenu()
+        showOznaczeniaMenu();
     })
 
     quiz.addEventListener('click', () => {
-        showQuizMenu()
+        showQuizMenu();
     })
 
     air.addEventListener('click', () => {
-        showWeatherMenu()
+        showWeatherMenu();
     })
 
     base.addEventListener('click', () => {
-        showBazaWiedzy()
+        showBazaWiedzy();
     })
 
     ranking.addEventListener('click', () => {
-        showRankingMenu()
+        showRankingMenu();
     })
 
 }
