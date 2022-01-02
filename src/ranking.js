@@ -14,7 +14,6 @@ export function  showRankingMenu() {
         <div class="qresult"> 
         <ol id="username"> 
         </ol>
-           
          <ul id="score"> 
          </ul>
          </div>    

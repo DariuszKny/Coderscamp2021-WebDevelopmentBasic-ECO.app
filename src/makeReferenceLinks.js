@@ -12,4 +12,7 @@ export function makeReferenceLinks(hrefElement){
     }
    
   };
+<<<<<<< HEAD
+=======
   
+>>>>>>> 33ed8f36b55f341b5afeb1e266d825d25155228f

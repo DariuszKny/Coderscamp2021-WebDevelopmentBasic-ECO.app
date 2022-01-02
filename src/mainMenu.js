@@ -1,6 +1,6 @@
 import { showQuizMenu } from './quiz.js';
 import { showWeatherMenu } from './apiwether.js';
-import { showBazaWiedzy } from './bazawiedzy.js';
+import { showBazaWiedzy } from './bazaWiedzy.js';
 import { showOznaczeniaMenu } from './oznaczenia.js';
 import { showRankingMenu } from './ranking.js';
 import { showSorterMenu } from './sorter.js';
