@@ -12,6 +12,7 @@ export function  showQuizMenu() {
 
   LinksHrefArray.forEach(makeReferenceLinks);
 
+  document.querySelector('footer').id=('footer-at-quiz');
   document.querySelector('#app').innerHTML = `  
   <div class=".quiz-container">       
     <div id="quiz-bar" class="hide">
