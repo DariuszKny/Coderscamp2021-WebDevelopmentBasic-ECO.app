@@ -5,12 +5,7 @@ import { removeReferenceLinks } from './removeReferenceLinks.js';
 export function  showQuizMenu() {
 
   removeReferenceLinks();
-  let LinksHrefArray = ['./src/quiz.css',
-                        './assets/fontawesome-free-6.0.0-beta3-web/css/solid.css',
-                        './assets/fontawesome-free-6.0.0-beta3-web/css/fontawesome.css',
-                        'https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Quicksand&display=swap'];
-
-  LinksHrefArray.forEach(makeReferenceLinks);
+  makeReferenceLinks('./src/quiz.css');
 
   document.querySelector('footer').id=('footer-at-quiz');
   document.querySelector('#app').innerHTML = `  
