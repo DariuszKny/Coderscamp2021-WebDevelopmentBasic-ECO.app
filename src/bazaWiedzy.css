@@ -162,7 +162,7 @@ img {
 .block {
   background-color: white;
   max-width: 30%;
-  min-height: 15rem;
+  min-height: 16rem;
   border: 2px solid black;
   margin: 1rem;
   border-radius: 0.1rem;
@@ -209,8 +209,14 @@ i {
   padding-bottom: 0.4rem;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .icon {
     font-size: 1rem;
+  }
+  .split {
+    display: block;
+  }
+  .block {
+    max-width: 100%;
   }
 }
