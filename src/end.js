@@ -1,4 +1,5 @@
-import { showRankingMenu} from './ranking.js'
+import { showRankingMenu,saveHighScore} from './ranking.js';
+
 export function  showQuizEndWindow() {
     document.querySelector('footer').id = '';
     document.querySelector('#app').innerHTML = `  
@@ -17,9 +18,6 @@ export function  showQuizEndWindow() {
         const mostRecentScore = localStorage.getItem('mostRecentScore');
         const saveUsernameInput = document.querySelector('#username');
         const saveScoreBtn = document.querySelector('#saveScoreBtn');
-        const MAX_HIGH_SCORES = 20;
-
-        const quizRanking= JSON.parse(localStorage.getItem('quizRanking')) || [];
 
         saveScoreBtn.disabled = false;
         finalScore.innerText =mostRecentScore;
@@ -33,18 +31,7 @@ export function  showQuizEndWindow() {
     
     function saveScoreToRanking (event){
             event.preventDefault();
-
-            const scoreFromQuiz = {
-                score: mostRecentScore,
-                name: saveUsernameInput.value
-            }
-
-            quizRanking.push(scoreFromQuiz);
-            quizRanking.sort((a, b) => {
-                return b.score - a.score
-            });
-            quizRanking.splice(MAX_HIGH_SCORES);
-            localStorage.setItem('quizRanking', JSON.stringify(quizRanking));
+            saveHighScore(mostRecentScore,saveUsernameInput.value,'quizRanking');
             showRankingMenu();
         };
 }

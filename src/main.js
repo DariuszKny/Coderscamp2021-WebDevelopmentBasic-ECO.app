@@ -13,4 +13,3 @@ const mainMenuButton = document.getElementById('mainMenuButton');
 mainMenuButton.addEventListener('click', () => {
     document.location.reload()
 })
-
