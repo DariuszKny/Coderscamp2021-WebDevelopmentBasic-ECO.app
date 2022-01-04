@@ -279,6 +279,7 @@ export function showSorterMenu() {
       timerId = null;
       addTheLastScore();
       document.querySelector('.game-over').classList.add('active');
+      document.querySelector('.score').classList.add('hidden');
       document.removeEventListener('keydown', control);
     }
   }
