@@ -7,8 +7,9 @@ makeReferenceLinks('./src/mainMenu.css');
 
 showMainMenu();
 
+
 const mainMenuButton = document.getElementById('mainMenuButton');
 
 mainMenuButton.addEventListener('click', () => {
-    showMainMenu();
-});
+    document.location.reload()
+})

@@ -222,7 +222,6 @@ console.log(numSlides);
 
 function handleNext() {
     currentSlide = (currentSlide + 1) % numSlides; 
-    //carousel.style.transform=`translateX(${currentSlide * -100}%)`;
     carousel.style.setProperty('--current-slide', currentSlide);
 }
 
@@ -231,7 +230,6 @@ function handlePrevious() {
     if(currentSlide < 0){
         currentSlide += numSlides;
     }
-    //carousel.style.transform=`translateX(${currentSlide * -100}%)`;
     carousel.style.setProperty('--current-slide', currentSlide);
 }
 
