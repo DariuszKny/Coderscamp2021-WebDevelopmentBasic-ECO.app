@@ -6,15 +6,15 @@ import { showRankingMenu } from './ranking.js';
 import { showSorterMenu } from './sorter.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
-
+import {loadModule} from './loader';
 
 
 
 export function showMainMenu() {
+  
+  removeReferenceLinks();
+  makeReferenceLinks('./src/mainMenu.css');
 
-    removeReferenceLinks();
-    makeReferenceLinks("./src/mainMenu.css");
-    
   document.querySelector('#app').innerHTML = `  
     <div class="container">
         <div class="item" id="game"><button class="button"><img class="img" src='resource/18966195.png'> <p class="menudescript"> Gra sorter </p></button></div> 
@@ -25,41 +25,34 @@ export function showMainMenu() {
         <div class="item" id="ranking"><button class="button"><img class="img" src="resource/puchar.png"><p class="menudescript">Ranking</p></button></div>
     </div>`;
 
-    const game = document.getElementById('game');
-    const signs = document.getElementById('signs');
-    const quiz = document.getElementById('quiz');
-    const air = document.getElementById('air');
-    const base = document.getElementById('base');
-    const ranking = document.getElementById('ranking');
+  const game = document.getElementById('game');
+  const signs = document.getElementById('signs');
+  const quiz = document.getElementById('quiz');
+  const air = document.getElementById('air');
+  const base = document.getElementById('base');
+  const ranking = document.getElementById('ranking');
 
-    game.addEventListener('click', () => {
-        showSorterMenu();
-    })
+  game.addEventListener('click', () => {
+    loadModule(showSorterMenu);
+  });
 
-    signs.addEventListener('click', () => {
-        showOznaczeniaMenu();
-    })
+  signs.addEventListener('click', () => {
+    loadModule(showOznaczeniaMenu);
+  });
 
-    quiz.addEventListener('click', () => {
-        showQuizMenu();
-    })
+  quiz.addEventListener('click', () => {
+    loadModule(showQuizMenu);
+  });
 
-    air.addEventListener('click', () => {
-        showWeatherMenu();
-    })
+  air.addEventListener('click', () => {
+    loadModule(showWeatherMenu);
+  });
 
-    base.addEventListener('click', () => {
-        showBazaWiedzy();
-    })
+  base.addEventListener('click', () => {
+    loadModule(showBazaWiedzy);
+  });
 
-    ranking.addEventListener('click', () => {
-        showRankingMenu();
-    })
-
+  ranking.addEventListener('click', () => {
+    loadModule(showRankingMenu);
+  });
 }
-
-
-
-
-
-

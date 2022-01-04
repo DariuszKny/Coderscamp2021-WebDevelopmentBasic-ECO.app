@@ -1,14 +1,15 @@
-import { saveHighScore } from "./ranking.js";
+import { saveHighScore } from './ranking.js';
+import { removeReferenceLinks } from './removeReferenceLinks.js';
+import { makeReferenceLinks } from './makeReferenceLinks.js';
 
-export function  showSorterMenu() {
+
+
+export function showSorterMenu() {
+  removeReferenceLinks();
+  makeReferenceLinks('/src/sorter.css', '/src/style.css');
+
   document.querySelector('#app').innerHTML = `  
   <div class="container"></div>`;
-
-  const head = document.querySelector('head');
-  let link = document.createElement('link');
-  link.setAttribute('rel', 'stylesheet');
-  link.setAttribute('href', './src/sorter.css');
-  head.appendChild(link);
 
   const APP = document.querySelector('.container');
   const GRID_WIDTH = 5;
@@ -17,130 +18,134 @@ export function  showSorterMenu() {
   const AIR_SIZE = GRID_WIDTH * AIR_HEIGHT;
 
   let containers = [
-      {
-        sort: 'bio',
-        color: 'url(./img-sorter/containers/bio.png)'
-      },
-      {
-        sort: 'paper',
-        color: 'url(./img-sorter/containers/paper.png)'
-      },
-      {
-        sort: 'plastic',
-        color: 'url(./img-sorter/containers/plastic.png)'
-      },
-      {
-        sort: 'glass',
-        color: 'url(./img-sorter/containers/glass.png)'
-      },
-      {
-        sort: 'mix',
-        color: 'url(./img-sorter/containers/mix.png)'
-      },
+    {
+      sort: 'bio',
+      color: 'url(/src/img-sorter/containers/bio.png)',
+    },
+    {
+      sort: 'paper',
+      color: 'url(/src/img-sorter/containers/paper.png)',
+    },
+    {
+      sort: 'plastic',
+      color: 'url(/src/img-sorter/containers/plastic.png)',
+    },
+    {
+      sort: 'glass',
+      color: 'url(/src/img-sorter/containers/glass.png)',
+    },
+    {
+      sort: 'mix',
+      color: 'url(/src/img-sorter/containers/mix.png)',
+    },
   ];
 
   const trash = [
     {
       sort: 'plastic',
-      path: 'url(./img-sorter/trash/aluminium-foil.png)'
+      path: 'url(/src/img-sorter/trash/aluminium-foil.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(./img-sorter/trash/plastic-bag.png)'
+      path: 'url(/src/img-sorter/trash/plastic-bag.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(./img-sorter/trash/plastic-bottle.png)'
+      path: 'url(/src/img-sorter/trash/plastic-bottle.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(./img-sorter/trash/puszka.png)'
+      path: 'url(/src/img-sorter/trash/puszka.png)',
     },
     {
       sort: 'glass',
-      path: 'url(./img-sorter/trash/glass_bottle.png)'
+      path: 'url(/src/img-sorter/trash/glass_bottle.png)',
     },
     {
       sort: 'glass',
-      path: 'url(./img-sorter/trash/glass-bottles.png)'
+      path: 'url(/src/img-sorter/trash/glass-bottles.png)',
     },
     {
       sort: 'paper',
-      path: 'url(./img-sorter/trash/box-paper.png)'
+      path: 'url(/src/img-sorter/trash/box-paper.png)',
     },
     {
       sort: 'paper',
-      path: 'url(./img-sorter/trash/newspaper.png)'
+      path: 'url(/src/img-sorter/trash/newspaper.png)',
     },
     {
       sort: 'bio',
-      path: 'url(./img-sorter/trash/apple.png)'
+      path: 'url(/src/img-sorter/trash/apple.png)',
     },
     {
       sort: 'bio',
-      path: 'url(./img-sorter/trash/banana.png)'
+      path: 'url(/src/img-sorter/trash/banana.png)',
     },
     {
       sort: 'bio',
-      path: 'url(./img-sorter/trash/leaves.png)'
+      path: 'url(/src/img-sorter/trash/leaves.png)',
     },
     {
       sort: 'mix',
-      path: 'url(./img-sorter/trash/cup-mix.png)'
+      path: 'url(/src/img-sorter/trash/cup-mix.png)',
     },
     {
       sort: 'mix',
-      path: 'url(./img-sorter/trash/tube.png)'
+      path: 'url(/src/img-sorter/trash/tube.png)',
     },
     {
       sort: 'mix',
-      path: 'url(./img-sorter/trash/fish-bone.png)'
+      path: 'url(/src/img-sorter/trash/fish-bone.png)',
     },
     {
       sort: 'mix',
-      path: 'url(./img-sorter/trash/toy.png)'
+      path: 'url(/src/img-sorter/trash/toy.png)',
     },
   ];
 
-  let width =  GRID_WIDTH;
+  let width = GRID_WIDTH;
   let interval = 1000;
   let timerId;
   let nextRandom = 0;
   let score = 0;
   let lives = 3;
-  let countForSpeed = 0;   //dla speedUp() function
+  let countForSpeed = 0; //dla speedUp() function
 
   //create all the cells for grid
-  
+
   const grid = createGrid();
   const scoreDisplay = createScoreDisplay();
   const gameOverDisplay = gameOverMenu();
 
-  let cells = Array.from(document.querySelectorAll('.cell')); 
+  let cells = Array.from(document.querySelectorAll('.cell'));
   const showScore = document.querySelector('.score_current');
   const showLives = document.querySelector('.lives_current');
   const startButton = document.querySelector('.btn-start');
-  
-  function createGrid() { 
-      let cellsWrapper = document.createElement('div');
-      cellsWrapper.classList.add('wrapper');
-      APP.appendChild(cellsWrapper);
 
-      for (let i = 0; i < AIR_SIZE; i++) {
-          let gridElement = document.createElement('div');
-          gridElement.classList.add('cell');
-          gridElement.classList.add('trash');
-          cellsWrapper.appendChild(gridElement);
-      }
+ document.body.classList.add('loaded');
+  document.body.classList.remove('loaded_hiding');
 
-      containers.forEach(el => {
-          let gridElement = document.createElement('div');
-          gridElement.classList.add('cell');
-          gridElement.classList.add('containers');
-          gridElement.setAttribute('sort', `${el.sort}`);
-          gridElement.style.backgroundImage = el.color;
-          cellsWrapper.appendChild(gridElement);
-      });
+
+  function createGrid() {
+    let cellsWrapper = document.createElement('div');
+    cellsWrapper.classList.add('wrapper');
+    APP.appendChild(cellsWrapper);
+
+    for (let i = 0; i < AIR_SIZE; i++) {
+      let gridElement = document.createElement('div');
+      gridElement.classList.add('cell');
+      gridElement.classList.add('trash');
+      cellsWrapper.appendChild(gridElement);
+    }
+
+    containers.forEach((el) => {
+      let gridElement = document.createElement('div');
+      gridElement.classList.add('cell');
+      gridElement.classList.add('containers');
+      gridElement.setAttribute('sort', `${el.sort}`);
+      gridElement.style.backgroundImage = el.color;
+      cellsWrapper.appendChild(gridElement);
+    });
   }
 
   function createScoreDisplay() {
@@ -179,7 +184,7 @@ export function  showSorterMenu() {
 
   startButton.addEventListener('click', () => {
     startButton.classList.toggle('selected');
-    if(startButton.innerHTML === 'Start') {
+    if (startButton.innerHTML === 'Start') {
       startButton.innerHTML = 'Pause';
     } else startButton.innerHTML = 'Start';
     if (timerId) {
@@ -195,18 +200,18 @@ export function  showSorterMenu() {
   });
 
   function control(e) {
-      if (e.keyCode === 39) {
-        moveRight();
-      } else if (e.keyCode === 37) {
-        moveLeft();
-      } else if (e.keyCode === 40) {
-        move(); 
-      }  
+    if (e.keyCode === 39) {
+      moveRight();
+    } else if (e.keyCode === 37) {
+      moveLeft();
+    } else if (e.keyCode === 40) {
+      move();
     }
+  }
 
   let random = Math.floor(Math.random() * trash.length);
   let current = trash[random];
-  
+
   //move the trash down -- move()
   let currentPosition = 2;
 
@@ -239,24 +244,23 @@ export function  showSorterMenu() {
     draw();
   }
 
-  
   function stopMoving() {
-  // if 'containers' are on the next row
-    if(cells[currentPosition].classList.contains('containers')) {
+    // if 'containers' are on the next row
+    if (cells[currentPosition].classList.contains('containers')) {
       addScore();
 
       // start a new item falling
       random = nextRandom;
-      nextRandom = Math.floor(Math.random() * trash.length)
+      nextRandom = Math.floor(Math.random() * trash.length);
       current = trash[random];
       currentPosition = 2;
       speedUp();
-      gameOver(); 
+      gameOver();
     }
   }
 
   function addScore() {
-    if(cells[currentPosition].getAttribute('sort') === current.sort) {
+    if (cells[currentPosition].getAttribute('sort') === current.sort) {
       score += 10;
       showScore.textContent = score;
     } else {
@@ -266,21 +270,22 @@ export function  showSorterMenu() {
   }
 
   function speedUp() {
-    if(countForSpeed === 5) {
+    if (countForSpeed === 5) {
       countForSpeed = 0;
       clearInterval(timerId);
-      timerId = setInterval(move, interval -= 100);
+      timerId = setInterval(move, (interval -= 100));
     } else {
       countForSpeed += 1;
     }
   }
 
   function gameOver() {
-    if(lives === 0) {
+    if (lives === 0) {
       clearInterval(timerId);
       timerId = null;
       addTheLastScore();
       document.querySelector('.game-over').classList.add('active');
+      document.querySelector('.score').classList.add('hidden');
       document.removeEventListener('keydown', control);
     }
   }
@@ -297,13 +302,12 @@ export function  showSorterMenu() {
     lastScoreWrapper.appendChild(scoreDiv);
 
     let nameInput = document.createElement('input');
-    nameInput.classList.add('game-over__score_input')
+    nameInput.classList.add('game-over__score_input');
     nameInput.setAttribute('id', 'nameg');
     nameInput.setAttribute('name', 'nameg');
     nameInput.setAttribute('type', 'text');
     nameInput.setAttribute('maxlength', '15');
     lastScoreWrapper.appendChild(nameInput);
-  
 
     let approveBtn = document.createElement('button');
     approveBtn.classList.add('btn-approve');
@@ -315,35 +319,31 @@ export function  showSorterMenu() {
     let restartBtn = document.createElement('button');
     restartBtn.classList.add('btn-restart');
     restartBtn.classList.add('btn');
-    restartBtn.innerHTML = 'Restart';
+    restartBtn.innerHTML = 'To Main Menu';
     lastScoreWrapper.appendChild(restartBtn);
     restartBtn.addEventListener('click', restartFn);
 
     let gameOverParent = document.querySelector('.game-over');
     gameOverParent.appendChild(lastScoreWrapper);
-
   }
-  
-  
+
   function addAppScore() {
     let inputName = document.querySelector('.game-over__score_input');
-    if(!inputName.value) {
+    if (!inputName.value) {
       inputName.classList.add('wrong');
     } else {
       inputName.classList.remove('wrong');
       let approveBtn = document.querySelector('.btn-approve');
       approveBtn.removeEventListener('click', addAppScore);
       approveBtn.setAttribute('disabled', 'disabled');
-      
-      let scoreg= document.querySelector('.score_current').innerHTML;
+
+      let scoreg = document.querySelector('.score_current').innerHTML;
       let nameg = document.querySelector('.game-over__score_input').value;
 
       saveHighScore(scoreg, nameg, 'gameRanking');
-    
-      }
+    }
   }
   function restartFn() {
-    document.location.reload();  
+    document.location.reload();
   }
-
 }
