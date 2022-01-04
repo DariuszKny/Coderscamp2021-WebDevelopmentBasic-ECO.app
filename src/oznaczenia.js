@@ -84,7 +84,7 @@ export function  showOznaczeniaMenu() {
 
             <div class="label">
                 <div class="img-container">
-                    <img src="resource/zsfgzk.png">
+                    <img src="resource/strzalki.png">
                 </div>
                 <div class="description-container">
                     <h2 class="label__header">MOŻLIWOŚĆ PONOWNEGO WYKORZYSTANIA</h2>
