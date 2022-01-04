@@ -12,12 +12,9 @@
       - [Jakość powietrza](#jakość-powietrza)
       - [Baza wiedzy](#baza-wiedzy)
       - [Ranking](#ranking)
-  - [Zmiany wprowadzone w wymaganiach](#zmiany-wprowadzone-w-wymaganiach)
-  - [Zrealizowane dodatkowe zadania](#zrealizowane-dodatkowe-zadania)
 - [Development aplikacji](#development-aplikacji)
   - [Wykorzystywane technologie](#wykorzystywane-technologie)
   - [Uruchomienie projektu](#uruchomienie-projektu)
-  - [Uruchomienie testów](#uruchomienie-testów)
   - [Organizacja pracy](#organizacja-pracy)
 
 ## Zespół projektowy
@@ -91,11 +88,6 @@ Ekran składa się z karuzeli slajdów, zawierających infromacje m.in na temat 
 
 W formie tabeli wyświetlane są najlepsze wyniki zarówno z gry sorter jak i quizu.
 
-### Zrealizowane dodatkowe zadania
-
-- wyniki gracza są zapisywane w zewnętrznej bazie danych
-- istnieje opcja wyboru czasu gry
-
 ## Development aplikacji
 
 ### Wykorzystywane technologie
@@ -107,10 +99,7 @@ W trakcie developmentu wykorzystujemy:
 - CSS
 - HTML
 - LocalStorage
-<!-- -   Jest.js -->
 - Fetch
-<!-- -   Parcel
-- Babel -->
 
 ### Uruchomienie projektu
 
@@ -122,12 +111,6 @@ Aby uruchomić aplikację na lokalnej maszynie, wykonaj następujące kroki:
 Aplikacja będzie dostępna pod adresem []()
 
 Kod produkcyjny aplikacji znajduje się w katalogu `src`.
-
-<!-- ### Uruchomienie testów
-
-Uruchom testy, wykonując komendę: `npm run test`. Testy z raportem pokrycia uruchomisz za pomocą: `npm run test:cov`.
-
-Kod testów umieszczamy w katalogu `test`. -->
 
 ### Organizacja pracy
 
