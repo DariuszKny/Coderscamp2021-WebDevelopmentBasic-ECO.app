@@ -2,6 +2,14 @@ import { saveHighScore } from './ranking.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+};
+
 export function showSorterMenu() {
   document.querySelector('#app').innerHTML = `  
   <div class="container"></div>`;
