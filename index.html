@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eco APP</title>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
 
-  <body>
-    <div class="preloader">
-      <div class="preloader__row">
-        <div class="preloader__item"></div>
-        <div class="preloader__item"></div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco APP</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+  <div id="preloader" class="preloader" style="display: none;">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
     </div>
+  </div>
 
-    <header class="header">
-      <h1 id="mainMenuButton"><img src="assets/img/logo-ecoApp.svg" /></h1>
-    </header>
+  <header class="header">
+    <h1 id="mainMenuButton"><img src="assets/img/logo-ecoApp.svg" /></h1>
+  </header>
 
-    <div id="app"></div>
+  <div id="app"></div>
 
-    <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/main.js"></script>
 
-    <!-- Container for reference links of styles -->
-    <div id="containerWithReferenceLinks"></div>
+  <!-- Container for reference links of styles -->
+  <div id="containerWithReferenceLinks"></div>
 
-    <footer class="footer">
-      <p class="pfooter">
-        Projekt realizowany w ramach<a href="https://www.coderscamp.edu.pl/"
-          ><img class="logo" src="./resource/coder-camp.svg"
-        /></a>
-        <a href="https://github.com/DariuszKny/Coderscamp2021-WebDevelopmentBasic-EcoSchool.git">
-          <img class="logo-github" src="./resource/github_logo.png"
-        /></a>
-      </p>
-    </footer>
-  </body>
+  <footer class="footer">
+    <p class="pfooter">
+      Projekt realizowany w ramach<a href="https://www.coderscamp.edu.pl/"><img class="logo"
+          src="./resource/coder-camp.svg" /></a>
+      <a href="https://github.com/DariuszKny/Coderscamp2021-WebDevelopmentBasic-EcoSchool.git">
+        <img class="logo-github" src="./resource/github_logo.png" /></a>
+    </p>
+  </footer>
+</body>
+
 </html>

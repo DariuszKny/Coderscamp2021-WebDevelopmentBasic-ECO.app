@@ -6,6 +6,7 @@ import { showRankingMenu } from './ranking.js';
 import { showSorterMenu } from './sorter.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
+import {loadModule} from './loader';
 
 export function showMainMenu() {
   removeReferenceLinks();
@@ -28,26 +29,26 @@ export function showMainMenu() {
   const ranking = document.getElementById('ranking');
 
   game.addEventListener('click', () => {
-    showSorterMenu();
+    loadModule(showSorterMenu);
   });
 
   signs.addEventListener('click', () => {
-    showOznaczeniaMenu();
+    loadModule(showOznaczeniaMenu);
   });
 
   quiz.addEventListener('click', () => {
-    showQuizMenu();
+    loadModule(showQuizMenu);
   });
 
   air.addEventListener('click', () => {
-    showWeatherMenu();
+    loadModule(showWeatherMenu);
   });
 
   base.addEventListener('click', () => {
-    showBazaWiedzy();
+    loadModule(showBazaWiedzy);
   });
 
   ranking.addEventListener('click', () => {
-    showRankingMenu();
+    loadModule(showRankingMenu);
   });
 }

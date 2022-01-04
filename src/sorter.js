@@ -2,20 +2,14 @@ import { saveHighScore } from './ranking.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 
-window.onload = function () {
-  document.body.classList.add('loaded_hiding');
-  window.setTimeout(function () {
-    document.body.classList.add('loaded');
-    document.body.classList.remove('loaded_hiding');
-  }, 500);
-};
+
 
 export function showSorterMenu() {
+  removeReferenceLinks();
+  makeReferenceLinks('/src/sorter.css', '/src/style.css');
+
   document.querySelector('#app').innerHTML = `  
   <div class="container"></div>`;
-
-  removeReferenceLinks();
-  makeReferenceLinks('/src/sorter.css');
 
   const APP = document.querySelector('.container');
   const GRID_WIDTH = 5;
@@ -127,6 +121,10 @@ export function showSorterMenu() {
   const showScore = document.querySelector('.score_current');
   const showLives = document.querySelector('.lives_current');
   const startButton = document.querySelector('.btn-start');
+
+ document.body.classList.add('loaded');
+  document.body.classList.remove('loaded_hiding');
+
 
   function createGrid() {
     let cellsWrapper = document.createElement('div');
