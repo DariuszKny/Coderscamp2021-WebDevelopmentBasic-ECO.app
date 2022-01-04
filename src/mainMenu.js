@@ -7,7 +7,6 @@ import { showSorterMenu } from './sorter.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
 
-<<<<<<< HEAD
 
 
 
@@ -17,13 +16,6 @@ export function showMainMenu() {
     makeReferenceLinks("./src/mainMenu.css");
     
   document.querySelector('#app').innerHTML = `  
-=======
-
-export function showMainMenu() {
-    removeReferenceLinks();
-    makeReferenceLinks('./src/mainMenu.css');
-    document.querySelector('#app').innerHTML = `  
->>>>>>> main
     <div class="container">
         <div class="item" id="game"><button class="button"><img class="img" src='resource/18966195.png'> <p class="menudescript"> Gra sorter </p></button></div> 
         <div class="item" id="signs"><button class="button"><img class="img" src="resource/pet.png"><p class="menudescript">Oznaczenia na opakowaniach</p></button></div>
