@@ -13,3 +13,4 @@ const mainMenuButton = document.getElementById('mainMenuButton');
 mainMenuButton.addEventListener('click', () => {
     loadModule(showMainMenu);
 });
+

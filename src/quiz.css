@@ -4,9 +4,16 @@ body {
   color: black;
 }
 
+
+#footer-at-quiz {
+  position: relative;
+}
+
+/* Quiz Style */
+
 #app {
   padding: 0 6rem;
-  height: inherit;
+  min-height: 800px;
 }
 
 #app h1 {
@@ -39,8 +46,9 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
-p.intro { 
+#app p.intro { 
   margin: 3rem 4rem;
+  text-align: center;
 }
 
 .quiz-container {
@@ -50,8 +58,6 @@ p.intro {
   text-align: center;
   color: #2c3e50;
 }
-
-/* Quiz Style */
 
 #quiz-info-container h1 {
   text-transform: uppercase;
@@ -428,5 +434,8 @@ input::placeholder{
    font-size: 1.2rem;
    margin-top: 1px;
  }
+  #app p.intro {
+    margin: 0.4rem;
+  }
 }
 
