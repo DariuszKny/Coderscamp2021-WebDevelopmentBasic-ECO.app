@@ -1,15 +1,16 @@
 import { showMainMenu } from './mainMenu.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
+import {loadModule} from './loader.js';
 
 removeReferenceLinks();
 makeReferenceLinks('./src/mainMenu.css');
 
-showMainMenu();
-
+loadModule(showMainMenu);
 
 const mainMenuButton = document.getElementById('mainMenuButton');
 
 mainMenuButton.addEventListener('click', () => {
-    document.location.reload()
-})
+    loadModule(showMainMenu);
+});
+
