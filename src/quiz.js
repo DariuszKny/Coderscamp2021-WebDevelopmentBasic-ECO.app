@@ -167,7 +167,7 @@ export function  showQuizMenu() {
 
   function showQuestion(question){
       questionElement.innerText = question.question;
-      questionImage.innerHTML = `<img src="/assets/img/quiz-test/${question.image}" alt="">`;
+      questionImage.innerHTML = `<img src="./assets/img/quiz-test/${question.image}" alt="">`;
       question.answers.forEach(answer => {
           const button = document.createElement('button');
           button.innerText = answer.text;

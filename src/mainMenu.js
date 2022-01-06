@@ -6,7 +6,7 @@ import { showRankingMenu } from './ranking.js';
 import { showSorterMenu } from './sorter.js';
 import { makeReferenceLinks } from './makeReferenceLinks.js';
 import { removeReferenceLinks } from './removeReferenceLinks.js';
-import {loadModule} from './loader';
+import {loadModule} from './loader.js';
 
 
 

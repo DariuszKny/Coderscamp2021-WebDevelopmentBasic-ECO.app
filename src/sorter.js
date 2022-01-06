@@ -6,7 +6,7 @@ import { makeReferenceLinks } from './makeReferenceLinks.js';
 
 export function showSorterMenu() {
   removeReferenceLinks();
-  makeReferenceLinks('/src/sorter.css', '/src/style.css');
+  makeReferenceLinks('./src/sorter.css');
 
   document.querySelector('#app').innerHTML = `  
   <div class="container"></div>`;
@@ -20,86 +20,86 @@ export function showSorterMenu() {
   let containers = [
     {
       sort: 'bio',
-      color: 'url(/src/img-sorter/containers/bio.png)',
+      color: 'url(./src/img-sorter/containers/bio.png)',
     },
     {
       sort: 'paper',
-      color: 'url(/src/img-sorter/containers/paper.png)',
+      color: 'url(./src/img-sorter/containers/paper.png)',
     },
     {
       sort: 'plastic',
-      color: 'url(/src/img-sorter/containers/plastic.png)',
+      color: 'url(./src/img-sorter/containers/plastic.png)',
     },
     {
       sort: 'glass',
-      color: 'url(/src/img-sorter/containers/glass.png)',
+      color: 'url(./src/img-sorter/containers/glass.png)',
     },
     {
       sort: 'mix',
-      color: 'url(/src/img-sorter/containers/mix.png)',
+      color: 'url(./src/img-sorter/containers/mix.png)',
     },
   ];
 
   const trash = [
     {
       sort: 'plastic',
-      path: 'url(/src/img-sorter/trash/aluminium-foil.png)',
+      path: 'url(./src/img-sorter/trash/aluminium-foil.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(/src/img-sorter/trash/plastic-bag.png)',
+      path: 'url(./src/img-sorter/trash/plastic-bag.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(/src/img-sorter/trash/plastic-bottle.png)',
+      path: 'url(./src/img-sorter/trash/plastic-bottle.png)',
     },
     {
       sort: 'plastic',
-      path: 'url(/src/img-sorter/trash/puszka.png)',
+      path: 'url(./src/img-sorter/trash/puszka.png)',
     },
     {
       sort: 'glass',
-      path: 'url(/src/img-sorter/trash/glass_bottle.png)',
+      path: 'url(./src/img-sorter/trash/glass_bottle.png)',
     },
     {
       sort: 'glass',
-      path: 'url(/src/img-sorter/trash/glass-bottles.png)',
+      path: 'url(./src/img-sorter/trash/glass-bottles.png)',
     },
     {
       sort: 'paper',
-      path: 'url(/src/img-sorter/trash/box-paper.png)',
+      path: 'url(./src/img-sorter/trash/box-paper.png)',
     },
     {
       sort: 'paper',
-      path: 'url(/src/img-sorter/trash/newspaper.png)',
+      path: 'url(./src/img-sorter/trash/newspaper.png)',
     },
     {
       sort: 'bio',
-      path: 'url(/src/img-sorter/trash/apple.png)',
+      path: 'url(./src/img-sorter/trash/apple.png)',
     },
     {
       sort: 'bio',
-      path: 'url(/src/img-sorter/trash/banana.png)',
+      path: 'url(./src/img-sorter/trash/banana.png)',
     },
     {
       sort: 'bio',
-      path: 'url(/src/img-sorter/trash/leaves.png)',
+      path: 'url(./src/img-sorter/trash/leaves.png)',
     },
     {
       sort: 'mix',
-      path: 'url(/src/img-sorter/trash/cup-mix.png)',
+      path: 'url(./src/img-sorter/trash/cup-mix.png)',
     },
     {
       sort: 'mix',
-      path: 'url(/src/img-sorter/trash/tube.png)',
+      path: 'url(./src/img-sorter/trash/tube.png)',
     },
     {
       sort: 'mix',
-      path: 'url(/src/img-sorter/trash/fish-bone.png)',
+      path: 'url(./src/img-sorter/trash/fish-bone.png)',
     },
     {
       sort: 'mix',
-      path: 'url(/src/img-sorter/trash/toy.png)',
+      path: 'url(./src/img-sorter/trash/toy.png)',
     },
   ];
 
