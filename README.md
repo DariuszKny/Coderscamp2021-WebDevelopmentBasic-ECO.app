@@ -29,7 +29,7 @@ Aplikację została wykonana przez uczestników kursu pod okiem dwóch mentorów
 - [Marcin Barszcz](https://github.com/marcinnnnb)
 - [Agnieszka Bury](https://github.com/angbur)
 - [Natallia Haurylenka](https://github.com/BetaBart)
-- [Agnieszka Kapelańczyk](https://github.com/MysiaPysia16)
+- [Agnieszka Kapelańczyk](https://github.com/AgnieszkaKapelanczyk)
 - [Marta Pejkowska](https://github.com/MartaPejkowska)
 - [Michał Stuleblak](https://github.com/fixedmichal)
 
